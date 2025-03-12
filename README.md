@@ -8,9 +8,4 @@
 
 Для использованиея библиотеки фаил NelderMead.dll нужно поместить в проект.
 Пример на python:  
-Project/  
-├── lib/  
-│   └── NelderMead.dll  
-└── app.txt  
-
-
+![Снимок экрана 2025-03-12 174042](https://github.com/user-attachments/assets/a2c6325a-c997-48e3-b9c4-4e0b32623ed2)
