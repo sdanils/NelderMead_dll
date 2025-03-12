@@ -24,7 +24,7 @@ events:
       The output was:
       0
       ╨Т╨╡╤А╤Б╨╕╤П MSBuild 17.11.9+a69bbaaf5 ╨┤╨╗╤П .NET Framework
-      ╨б╨▒╨╛╤А╨║╨░ ╨╜╨░╤З╨░╤В╨░ 12.03.2025 16:37:20.
+      ╨б╨▒╨╛╤А╨║╨░ ╨╜╨░╤З╨░╤В╨░ 12.03.2025 17:42:15.
       
       ╨Я╤А╨╛╨╡╨║╤В "D:\\╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗\\Visual Code\\NelderMid\\NelderMead_dll\\build_x64\\CMakeFiles\\3.29.5-msvc4\\CompilerIdC\\CompilerIdC.vcxproj" ╨▓ ╤Г╨╖╨╗╨╡ 1 (╤Ж╨╡╨╗╨╡╨▓╤Л╨╡ ╨╛╨▒╤К╨╡╨║╤В╤Л ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О).
       PrepareForBuild:
@@ -53,7 +53,7 @@ events:
           ╨Я╤А╨╡╨┤╤Г╨┐╤А╨╡╨╢╨┤╨╡╨╜╨╕╨╣: 0
           ╨Ю╤И╨╕╨▒╨╛╨║: 0
       
-      ╨Я╤А╨╛╤И╨╗╨╛ ╨▓╤А╨╡╨╝╨╡╨╜╨╕ 00:00:01.38
+      ╨Я╤А╨╛╤И╨╗╨╛ ╨▓╤А╨╡╨╝╨╡╨╜╨╕ 00:00:01.25
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -79,7 +79,7 @@ events:
       The output was:
       0
       ╨Т╨╡╤А╤Б╨╕╤П MSBuild 17.11.9+a69bbaaf5 ╨┤╨╗╤П .NET Framework
-      ╨б╨▒╨╛╤А╨║╨░ ╨╜╨░╤З╨░╤В╨░ 12.03.2025 16:37:22.
+      ╨б╨▒╨╛╤А╨║╨░ ╨╜╨░╤З╨░╤В╨░ 12.03.2025 17:42:16.
       
       ╨Я╤А╨╛╨╡╨║╤В "D:\\╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗\\Visual Code\\NelderMid\\NelderMead_dll\\build_x64\\CMakeFiles\\3.29.5-msvc4\\CompilerIdCXX\\CompilerIdCXX.vcxproj" ╨▓ ╤Г╨╖╨╗╨╡ 1 (╤Ж╨╡╨╗╨╡╨▓╤Л╨╡ ╨╛╨▒╤К╨╡╨║╤В╤Л ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О).
       PrepareForBuild:
@@ -108,7 +108,7 @@ events:
           ╨Я╤А╨╡╨┤╤Г╨┐╤А╨╡╨╢╨┤╨╡╨╜╨╕╨╣: 0
           ╨Ю╤И╨╕╨▒╨╛╨║: 0
       
-      ╨Я╤А╨╛╤И╨╗╨╛ ╨▓╤А╨╡╨╝╨╡╨╜╨╕ 00:00:01.00
+      ╨Я╤А╨╛╤И╨╗╨╛ ╨▓╤А╨╡╨╝╨╡╨╜╨╕ 00:00:00.83
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -127,8 +127,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "D:/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/Visual Code/NelderMid/NelderMead_dll/build_x64/CMakeFiles/CMakeScratch/TryCompile-lnbu0u"
-      binary: "D:/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/Visual Code/NelderMid/NelderMead_dll/build_x64/CMakeFiles/CMakeScratch/TryCompile-lnbu0u"
+      source: "D:/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/Visual Code/NelderMid/NelderMead_dll/build_x64/CMakeFiles/CMakeScratch/TryCompile-t9oihq"
+      binary: "D:/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/Visual Code/NelderMid/NelderMead_dll/build_x64/CMakeFiles/CMakeScratch/TryCompile-t9oihq"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -137,40 +137,40 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/Рабочий стол/Visual Code/NelderMid/NelderMead_dll/build_x64/CMakeFiles/CMakeScratch/TryCompile-lnbu0u'
+        Change Dir: 'D:/Рабочий стол/Visual Code/NelderMid/NelderMead_dll/build_x64/CMakeFiles/CMakeScratch/TryCompile-t9oihq'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_a3c12.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_a3778.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         ╨Т╨╡╤А╤Б╨╕╤П MSBuild 17.11.9+a69bbaaf5 ╨┤╨╗╤П .NET Framework
-        ╨б╨▒╨╛╤А╨║╨░ ╨╜╨░╤З╨░╤В╨░ 12.03.2025 16:37:24.
+        ╨б╨▒╨╛╤А╨║╨░ ╨╜╨░╤З╨░╤В╨░ 12.03.2025 17:42:18.
         
-        ╨Я╤А╨╛╨╡╨║╤В "D:\\╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗\\Visual Code\\NelderMid\\NelderMead_dll\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-lnbu0u\\cmTC_a3c12.vcxproj" ╨▓ ╤Г╨╖╨╗╨╡ 1 (╤Ж╨╡╨╗╨╡╨▓╤Л╨╡ ╨╛╨▒╤К╨╡╨║╤В╤Л ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О).
+        ╨Я╤А╨╛╨╡╨║╤В "D:\\╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗\\Visual Code\\NelderMid\\NelderMead_dll\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-t9oihq\\cmTC_a3778.vcxproj" ╨▓ ╤Г╨╖╨╗╨╡ 1 (╤Ж╨╡╨╗╨╡╨▓╤Л╨╡ ╨╛╨▒╤К╨╡╨║╤В╤Л ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О).
         PrepareForBuild:
-          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "cmTC_a3c12.dir\\Debug\\".
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "cmTC_a3778.dir\\Debug\\".
           ╨б╤В╤А╤Г╨║╤В╤Г╤А╨╕╤А╨╛╨▓╨░╨╜╨╜╤Л╨╣ ╨▓╤Л╨▓╨╛╨┤ ╨▓╨║╨╗╤О╤З╨╡╨╜. ╨д╨╛╤А╨╝╨░╤В╨╕╤А╨╛╨▓╨░╨╜╨╕╨╡ ╨┤╨╕╨░╨│╨╜╨╛╤Б╤В╨╕╨║╨╕ ╨║╨╛╨╝╨┐╨╕╨╗╤П╤В╨╛╤А╨░ ╨▒╤Г╨┤╨╡╤В ╨╛╤В╤А╨░╨╢╨░╤В╤М ╨╕╨╡╤А╨░╤А╤Е╨╕╤О ╨╛╤И╨╕╨▒╨╛╨║. ╨Я╨╛╨┤╤А╨╛╨▒╨╜╨╡╨╡ ╤Б╨╝. https://aka.ms/cpp/structured-output.
-          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "D:\\╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗\\Visual Code\\NelderMid\\NelderMead_dll\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-lnbu0u\\Debug\\".
-          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "cmTC_a3c12.dir\\Debug\\cmTC_a3c12.tlog\\".
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "D:\\╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗\\Visual Code\\NelderMid\\NelderMead_dll\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-t9oihq\\Debug\\".
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "cmTC_a3778.dir\\Debug\\cmTC_a3778.tlog\\".
         InitializeBuildStatus:
-          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ "cmTC_a3c12.dir\\Debug\\cmTC_a3c12.tlog\\unsuccessfulbuild", ╤В╨░╨║ ╨║╨░╨║ ╨▒╤Л╨╗╨╛ ╨╖╨░╨┤╨░╨╜╨╛ "AlwaysCreate".
-          ╨Ю╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨║ "cmTC_a3c12.dir\\Debug\\cmTC_a3c12.tlog\\unsuccessfulbuild".
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ "cmTC_a3778.dir\\Debug\\cmTC_a3778.tlog\\unsuccessfulbuild", ╤В╨░╨║ ╨║╨░╨║ ╨▒╤Л╨╗╨╛ ╨╖╨░╨┤╨░╨╜╨╛ "AlwaysCreate".
+          ╨Ю╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨║ "cmTC_a3778.dir\\Debug\\cmTC_a3778.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a3c12.dir\\Debug\\\\" /Fd"cmTC_a3c12.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a3778.dir\\Debug\\\\" /Fd"cmTC_a3778.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
           ╨Ю╨┐╤В╨╕╨╝╨╕╨╖╨╕╤А╤Г╤О╤Й╨╕╨╣ ╨║╨╛╨╝╨┐╨╕╨╗╤П╤В╨╛╤А Microsoft (R) C/C++ ╨▓╨╡╤А╤Б╨╕╨╕ 19.41.34120 ╨┤╨╗╤П x64
           (C) ╨Ъ╨╛╤А╨┐╨╛╤А╨░╤Ж╨╕╤П ╨Ь╨░╨╣╨║╤А╨╛╤Б╨╛╤Д╤В (Microsoft Corporation).  ╨Т╤Б╨╡ ╨┐╤А╨░╨▓╨░ ╨╖╨░╤Й╨╕╤Й╨╡╨╜╤Л.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a3c12.dir\\Debug\\\\" /Fd"cmTC_a3c12.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a3778.dir\\Debug\\\\" /Fd"cmTC_a3778.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗\\Visual Code\\NelderMid\\NelderMead_dll\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-lnbu0u\\Debug\\cmTC_a3c12.exe" /INCREMENTAL /ILK:"cmTC_a3c12.dir\\Debug\\cmTC_a3c12.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗/Visual Code/NelderMid/NelderMead_dll/build_x64/CMakeFiles/CMakeScratch/TryCompile-lnbu0u/Debug/cmTC_a3c12.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗/Visual Code/NelderMid/NelderMead_dll/build_x64/CMakeFiles/CMakeScratch/TryCompile-lnbu0u/Debug/cmTC_a3c12.lib" /MACHINE:X64  /machine:x64 cmTC_a3c12.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_a3c12.vcxproj -> D:\\╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗\\Visual Code\\NelderMid\\NelderMead_dll\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-lnbu0u\\Debug\\cmTC_a3c12.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗\\Visual Code\\NelderMid\\NelderMead_dll\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-t9oihq\\Debug\\cmTC_a3778.exe" /INCREMENTAL /ILK:"cmTC_a3778.dir\\Debug\\cmTC_a3778.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗/Visual Code/NelderMid/NelderMead_dll/build_x64/CMakeFiles/CMakeScratch/TryCompile-t9oihq/Debug/cmTC_a3778.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗/Visual Code/NelderMid/NelderMead_dll/build_x64/CMakeFiles/CMakeScratch/TryCompile-t9oihq/Debug/cmTC_a3778.lib" /MACHINE:X64  /machine:x64 cmTC_a3778.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_a3778.vcxproj -> D:\\╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗\\Visual Code\\NelderMid\\NelderMead_dll\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-t9oihq\\Debug\\cmTC_a3778.exe
         FinalizeBuildStatus:
-          ╨д╨░╨╣╨╗ "cmTC_a3c12.dir\\Debug\\cmTC_a3c12.tlog\\unsuccessfulbuild" ╤Г╨┤╨░╨╗╤П╨╡╤В╤Б╤П.
-          ╨Ю╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨║ "cmTC_a3c12.dir\\Debug\\cmTC_a3c12.tlog\\cmTC_a3c12.lastbuildstate".
-        ╨б╨▒╨╛╤А╨║╨░ ╨┐╤А╨╛╨╡╨║╤В╨░ "D:\\╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗\\Visual Code\\NelderMid\\NelderMead_dll\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-lnbu0u\\cmTC_a3c12.vcxproj" ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨░ (╤Ж╨╡╨╗╨╡╨▓╤Л╨╡ ╨╛╨▒╤К╨╡╨║╤В╤Л ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О).
+          ╨д╨░╨╣╨╗ "cmTC_a3778.dir\\Debug\\cmTC_a3778.tlog\\unsuccessfulbuild" ╤Г╨┤╨░╨╗╤П╨╡╤В╤Б╤П.
+          ╨Ю╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨║ "cmTC_a3778.dir\\Debug\\cmTC_a3778.tlog\\cmTC_a3778.lastbuildstate".
+        ╨б╨▒╨╛╤А╨║╨░ ╨┐╤А╨╛╨╡╨║╤В╨░ "D:\\╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗\\Visual Code\\NelderMid\\NelderMead_dll\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-t9oihq\\cmTC_a3778.vcxproj" ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨░ (╤Ж╨╡╨╗╨╡╨▓╤Л╨╡ ╨╛╨▒╤К╨╡╨║╤В╤Л ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О).
         
         ╨б╨▒╨╛╤А╨║╨░ ╤Г╤Б╨┐╨╡╤И╨╜╨╛ ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨░.
             ╨Я╤А╨╡╨┤╤Г╨┐╤А╨╡╨╢╨┤╨╡╨╜╨╕╨╣: 0
             ╨Ю╤И╨╕╨▒╨╛╨║: 0
         
-        ╨Я╤А╨╛╤И╨╗╨╛ ╨▓╤А╨╡╨╝╨╡╨╜╨╕ 00:00:00.83
+        ╨Я╤А╨╛╤И╨╗╨╛ ╨▓╤А╨╡╨╝╨╡╨╜╨╕ 00:00:00.78
         
       exitCode: 0
   -
@@ -210,8 +210,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "D:/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/Visual Code/NelderMid/NelderMead_dll/build_x64/CMakeFiles/CMakeScratch/TryCompile-3a57mg"
-      binary: "D:/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/Visual Code/NelderMid/NelderMead_dll/build_x64/CMakeFiles/CMakeScratch/TryCompile-3a57mg"
+      source: "D:/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/Visual Code/NelderMid/NelderMead_dll/build_x64/CMakeFiles/CMakeScratch/TryCompile-5k4dw7"
+      binary: "D:/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/Visual Code/NelderMid/NelderMead_dll/build_x64/CMakeFiles/CMakeScratch/TryCompile-5k4dw7"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -221,40 +221,40 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/Рабочий стол/Visual Code/NelderMid/NelderMead_dll/build_x64/CMakeFiles/CMakeScratch/TryCompile-3a57mg'
+        Change Dir: 'D:/Рабочий стол/Visual Code/NelderMid/NelderMead_dll/build_x64/CMakeFiles/CMakeScratch/TryCompile-5k4dw7'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_a4bbc.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_6bd19.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         ╨Т╨╡╤А╤Б╨╕╤П MSBuild 17.11.9+a69bbaaf5 ╨┤╨╗╤П .NET Framework
-        ╨б╨▒╨╛╤А╨║╨░ ╨╜╨░╤З╨░╤В╨░ 12.03.2025 16:37:25.
+        ╨б╨▒╨╛╤А╨║╨░ ╨╜╨░╤З╨░╤В╨░ 12.03.2025 17:42:19.
         
-        ╨Я╤А╨╛╨╡╨║╤В "D:\\╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗\\Visual Code\\NelderMid\\NelderMead_dll\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-3a57mg\\cmTC_a4bbc.vcxproj" ╨▓ ╤Г╨╖╨╗╨╡ 1 (╤Ж╨╡╨╗╨╡╨▓╤Л╨╡ ╨╛╨▒╤К╨╡╨║╤В╤Л ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О).
+        ╨Я╤А╨╛╨╡╨║╤В "D:\\╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗\\Visual Code\\NelderMid\\NelderMead_dll\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-5k4dw7\\cmTC_6bd19.vcxproj" ╨▓ ╤Г╨╖╨╗╨╡ 1 (╤Ж╨╡╨╗╨╡╨▓╤Л╨╡ ╨╛╨▒╤К╨╡╨║╤В╤Л ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О).
         PrepareForBuild:
-          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "cmTC_a4bbc.dir\\Debug\\".
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "cmTC_6bd19.dir\\Debug\\".
           ╨б╤В╤А╤Г╨║╤В╤Г╤А╨╕╤А╨╛╨▓╨░╨╜╨╜╤Л╨╣ ╨▓╤Л╨▓╨╛╨┤ ╨▓╨║╨╗╤О╤З╨╡╨╜. ╨д╨╛╤А╨╝╨░╤В╨╕╤А╨╛╨▓╨░╨╜╨╕╨╡ ╨┤╨╕╨░╨│╨╜╨╛╤Б╤В╨╕╨║╨╕ ╨║╨╛╨╝╨┐╨╕╨╗╤П╤В╨╛╤А╨░ ╨▒╤Г╨┤╨╡╤В ╨╛╤В╤А╨░╨╢╨░╤В╤М ╨╕╨╡╤А╨░╤А╤Е╨╕╤О ╨╛╤И╨╕╨▒╨╛╨║. ╨Я╨╛╨┤╤А╨╛╨▒╨╜╨╡╨╡ ╤Б╨╝. https://aka.ms/cpp/structured-output.
-          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "D:\\╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗\\Visual Code\\NelderMid\\NelderMead_dll\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-3a57mg\\Debug\\".
-          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "cmTC_a4bbc.dir\\Debug\\cmTC_a4bbc.tlog\\".
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "D:\\╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗\\Visual Code\\NelderMid\\NelderMead_dll\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-5k4dw7\\Debug\\".
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "cmTC_6bd19.dir\\Debug\\cmTC_6bd19.tlog\\".
         InitializeBuildStatus:
-          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ "cmTC_a4bbc.dir\\Debug\\cmTC_a4bbc.tlog\\unsuccessfulbuild", ╤В╨░╨║ ╨║╨░╨║ ╨▒╤Л╨╗╨╛ ╨╖╨░╨┤╨░╨╜╨╛ "AlwaysCreate".
-          ╨Ю╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨║ "cmTC_a4bbc.dir\\Debug\\cmTC_a4bbc.tlog\\unsuccessfulbuild".
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ "cmTC_6bd19.dir\\Debug\\cmTC_6bd19.tlog\\unsuccessfulbuild", ╤В╨░╨║ ╨║╨░╨║ ╨▒╤Л╨╗╨╛ ╨╖╨░╨┤╨░╨╜╨╛ "AlwaysCreate".
+          ╨Ю╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨║ "cmTC_6bd19.dir\\Debug\\cmTC_6bd19.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_a4bbc.dir\\Debug\\\\" /Fd"cmTC_a4bbc.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_6bd19.dir\\Debug\\\\" /Fd"cmTC_6bd19.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
           ╨Ю╨┐╤В╨╕╨╝╨╕╨╖╨╕╤А╤Г╤О╤Й╨╕╨╣ ╨║╨╛╨╝╨┐╨╕╨╗╤П╤В╨╛╤А Microsoft (R) C/C++ ╨▓╨╡╤А╤Б╨╕╨╕ 19.41.34120 ╨┤╨╗╤П x64
           (C) ╨Ъ╨╛╤А╨┐╨╛╤А╨░╤Ж╨╕╤П ╨Ь╨░╨╣╨║╤А╨╛╤Б╨╛╤Д╤В (Microsoft Corporation).  ╨Т╤Б╨╡ ╨┐╤А╨░╨▓╨░ ╨╖╨░╤Й╨╕╤Й╨╡╨╜╤Л.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_a4bbc.dir\\Debug\\\\" /Fd"cmTC_a4bbc.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_6bd19.dir\\Debug\\\\" /Fd"cmTC_6bd19.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗\\Visual Code\\NelderMid\\NelderMead_dll\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-3a57mg\\Debug\\cmTC_a4bbc.exe" /INCREMENTAL /ILK:"cmTC_a4bbc.dir\\Debug\\cmTC_a4bbc.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗/Visual Code/NelderMid/NelderMead_dll/build_x64/CMakeFiles/CMakeScratch/TryCompile-3a57mg/Debug/cmTC_a4bbc.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗/Visual Code/NelderMid/NelderMead_dll/build_x64/CMakeFiles/CMakeScratch/TryCompile-3a57mg/Debug/cmTC_a4bbc.lib" /MACHINE:X64  /machine:x64 cmTC_a4bbc.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_a4bbc.vcxproj -> D:\\╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗\\Visual Code\\NelderMid\\NelderMead_dll\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-3a57mg\\Debug\\cmTC_a4bbc.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗\\Visual Code\\NelderMid\\NelderMead_dll\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-5k4dw7\\Debug\\cmTC_6bd19.exe" /INCREMENTAL /ILK:"cmTC_6bd19.dir\\Debug\\cmTC_6bd19.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗/Visual Code/NelderMid/NelderMead_dll/build_x64/CMakeFiles/CMakeScratch/TryCompile-5k4dw7/Debug/cmTC_6bd19.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗/Visual Code/NelderMid/NelderMead_dll/build_x64/CMakeFiles/CMakeScratch/TryCompile-5k4dw7/Debug/cmTC_6bd19.lib" /MACHINE:X64  /machine:x64 cmTC_6bd19.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_6bd19.vcxproj -> D:\\╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗\\Visual Code\\NelderMid\\NelderMead_dll\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-5k4dw7\\Debug\\cmTC_6bd19.exe
         FinalizeBuildStatus:
-          ╨д╨░╨╣╨╗ "cmTC_a4bbc.dir\\Debug\\cmTC_a4bbc.tlog\\unsuccessfulbuild" ╤Г╨┤╨░╨╗╤П╨╡╤В╤Б╤П.
-          ╨Ю╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨║ "cmTC_a4bbc.dir\\Debug\\cmTC_a4bbc.tlog\\cmTC_a4bbc.lastbuildstate".
-        ╨б╨▒╨╛╤А╨║╨░ ╨┐╤А╨╛╨╡╨║╤В╨░ "D:\\╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗\\Visual Code\\NelderMid\\NelderMead_dll\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-3a57mg\\cmTC_a4bbc.vcxproj" ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨░ (╤Ж╨╡╨╗╨╡╨▓╤Л╨╡ ╨╛╨▒╤К╨╡╨║╤В╤Л ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О).
+          ╨д╨░╨╣╨╗ "cmTC_6bd19.dir\\Debug\\cmTC_6bd19.tlog\\unsuccessfulbuild" ╤Г╨┤╨░╨╗╤П╨╡╤В╤Б╤П.
+          ╨Ю╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨║ "cmTC_6bd19.dir\\Debug\\cmTC_6bd19.tlog\\cmTC_6bd19.lastbuildstate".
+        ╨б╨▒╨╛╤А╨║╨░ ╨┐╤А╨╛╨╡╨║╤В╨░ "D:\\╨а╨░╨▒╨╛╤З╨╕╨╣ ╤Б╤В╨╛╨╗\\Visual Code\\NelderMid\\NelderMead_dll\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-5k4dw7\\cmTC_6bd19.vcxproj" ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨░ (╤Ж╨╡╨╗╨╡╨▓╤Л╨╡ ╨╛╨▒╤К╨╡╨║╤В╤Л ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О).
         
         ╨б╨▒╨╛╤А╨║╨░ ╤Г╤Б╨┐╨╡╤И╨╜╨╛ ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨░.
             ╨Я╤А╨╡╨┤╤Г╨┐╤А╨╡╨╢╨┤╨╡╨╜╨╕╨╣: 0
             ╨Ю╤И╨╕╨▒╨╛╨║: 0
         
-        ╨Я╤А╨╛╤И╨╗╨╛ ╨▓╤А╨╡╨╝╨╡╨╜╨╕ 00:00:00.85
+        ╨Я╤А╨╛╤И╨╗╨╛ ╨▓╤А╨╡╨╝╨╡╨╜╨╕ 00:00:00.77
         
       exitCode: 0
   -

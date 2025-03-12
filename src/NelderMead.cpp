@@ -7,7 +7,7 @@ double NM_addition(const double number_one, const double number_two){
 }
 
 double NM_subtraction(const double number_one, const double number_two){
-    double result = number_one + number_two;
+    double result = number_one - number_two;
     return result;
 }
 
