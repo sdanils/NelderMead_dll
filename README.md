@@ -7,10 +7,10 @@
 Фаил библиотеки находится в build_x64/Release
 
 Для использованиея библиотеки фаил NelderMead.dll нужно поместить в проект.
-Пример на python: 
-Project/
-├── lib/
-│   └── NelderMead.dll
-└── app.txt
+Пример на python:  
+Project/  
+├── lib/  
+│   └── NelderMead.dll  
+└── app.txt  
 
 
