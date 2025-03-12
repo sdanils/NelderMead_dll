@@ -1,0 +1,3 @@
+D:/Рабочий стол/Visual Code/NelderMid/NelderMead_dll/build_x64/CMakeFiles/NelderMead.dir
+D:/Рабочий стол/Visual Code/NelderMid/NelderMead_dll/build_x64/CMakeFiles/ALL_BUILD.dir
+D:/Рабочий стол/Visual Code/NelderMid/NelderMead_dll/build_x64/CMakeFiles/ZERO_CHECK.dir

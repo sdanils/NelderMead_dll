@@ -1,0 +1,10 @@
+^D:\РАБОЧИЙ СТОЛ\VISUAL CODE\NELDERMID\NELDERMEAD_DLL\BUILD_X64\CMAKEFILES\746D66599FF840149597F843848FDE61\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SD:/Рабочий стол/Visual Code/NelderMid/NelderMead_dll" "-BD:/Рабочий стол/Visual Code/NelderMid/NelderMead_dll/build_x64" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "D:/Рабочий стол/Visual Code/NelderMid/NelderMead_dll/build_x64/NelderMead_DLL.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
