@@ -9,3 +9,4 @@ target_include_directories(NelderMead PUBLIC include)
 if(WIN32)
     target_compile_definitions(NelderMead PRIVATE MYLIBRARY_EXPORTS)
 endif()
+
