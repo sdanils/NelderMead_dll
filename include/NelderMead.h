@@ -1,18 +1,9 @@
-// NelderMid.h - Contains declarations of Nelder-Mid functions
 #pragma once
 
-#ifdef _WIN32
-#ifdef NELDERMID_EXPORTS
-#define NELDERMID_API __declspec(dllexport)
-#else
-#define NELDERMID_API __declspec(dllimport)
-#endif
-#else
-#define NELDERMID_API  // Нет реализации для других платформ
-#endif
+#include "TreeClasses.h"
 
 #ifdef __cplusplus
-extern "C" {
+extern "C" {  // Если нужно использовать API из C
 #endif
 
 NELDERMID_API double NM_addition(const double number_one,
@@ -26,6 +17,8 @@ NELDERMID_API double NM_multiplication(const double number_one,
 
 NELDERMID_API double NM_division(const double number_one,
                                  const double number_two);
+
+NELDERMID_API Tree* function_parser(const char* function_str);
 
 #ifdef __cplusplus
 }
