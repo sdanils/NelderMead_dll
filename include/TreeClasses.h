@@ -10,22 +10,45 @@
 #define NELDERMID_API
 #endif
 
-class NELDERMID_API TreeNode {
- public:
-  int data;
-  TreeNode* left;
-  TreeNode* right;
+#include <string>
 
-  TreeNode(int value) : data(value), left(nullptr), right(nullptr) {}
-  ~TreeNode();
+using std::string;
+
+class TreeNode {
+ public:
+  virtual ~TreeNode() = default;
+
+  virtual double evaluate() const = 0;
+};
+class NumberNode : public TreeNode {
+ private:
+  double number;
+
+ public:
+  NumberNode(const string& number);
+
+  double evaluate() const override;
+};
+class OperatorNode : public TreeNode {
+ private:
+  char oper;
+  TreeNode* left_child;
+  TreeNode* right_child;
+
+ public:
+  OperatorNode(const char oper);
+  ~OperatorNode();
+
+  double evaluate() const override;
 };
 
-class NELDERMID_API Tree {
- public:
+class NELDERMID_API ExpressionTree {
+ private:
   TreeNode* root;
 
-  Tree();
-  ~Tree();
+ public:
+  ExpressionTree();
+  ~ExpressionTree();
 
-  void insert(int value);
+  double evaluate();
 };
