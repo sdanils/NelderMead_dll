@@ -14,32 +14,34 @@
 
 using std::string;
 
-class TreeNode {
+class NELDERMID_API TreeNode {
  public:
   virtual ~TreeNode() = default;
 
-  virtual double evaluate() const = 0;
+  virtual double evaluate();
 };
-class NumberNode : public TreeNode {
+
+class NELDERMID_API NumberNode : public TreeNode {
  private:
   double number;
 
  public:
   NumberNode(const string& number);
 
-  double evaluate() const override;
+  double evaluate() override;
 };
-class OperatorNode : public TreeNode {
+
+class NELDERMID_API OperatorNode : public TreeNode {
  private:
   char oper;
   TreeNode* left_child;
   TreeNode* right_child;
 
  public:
-  OperatorNode(const char oper);
+  OperatorNode(const char oper_, TreeNode* left, TreeNode* right);
   ~OperatorNode();
 
-  double evaluate() const override;
+  double evaluate() override;
 };
 
 class NELDERMID_API ExpressionTree {
@@ -47,7 +49,7 @@ class NELDERMID_API ExpressionTree {
   TreeNode* root;
 
  public:
-  ExpressionTree();
+  ExpressionTree(TreeNode* root_);
   ~ExpressionTree();
 
   double evaluate();
