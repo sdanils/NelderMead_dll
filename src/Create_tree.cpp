@@ -1,14 +1,14 @@
 #include <string>
 #include <vector>
 
+#include "Classes.h"
 #include "Internal_func.h"
 #include "NelderMead.h"
-#include "Tree_classes.h"
 
 using std::string;
 using std::vector;
 
-ExpressionTree* build_tree(const char* function_str_c) {
+ExpressionTree* creat_tree(const char* function_str_c) {
   string function_str = check_correct(function_str_c);
   if (function_str == "f") {
     return nullptr;

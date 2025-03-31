@@ -1,4 +1,4 @@
-#include "Tree_classes.h"
+#include "Classes.h"
 
 #include <limits.h>
 #include <math.h>
@@ -60,6 +60,8 @@ double ExpressionTree::evaluate() {
   }
   return (double)0;
 }
+
+std::map<string, double> Solution::variables;
 
 void Solution::set(const string& name, double value) {
   variables[name] = value;

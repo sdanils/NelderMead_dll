@@ -1,12 +1,12 @@
 #pragma once
 
-#include "Tree_classes.h"
+#include "Classes.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-NELDERMID_API ExpressionTree* build_tree(const char* function_str);
+NELDERMID_API ExpressionTree* create_tree(const char* function_str);
 
 NELDERMID_API double evaluate_tree(ExpressionTree* trее);
 

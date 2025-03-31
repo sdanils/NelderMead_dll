@@ -2,8 +2,8 @@
 #include <string>
 #include <vector>
 
+#include "Classes.h"
 #include "Internal_func.h"
-#include "Tree_classes.h"
 
 using std::stack;
 using std::string;
