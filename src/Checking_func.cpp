@@ -7,9 +7,9 @@ using std::string;
 using std::unordered_set;
 
 bool check_chars(const string& function_str) {
-  const unordered_set<char> char_set = {'0', '1', '2', '3', '4', '5',
-                                        '6', '7', '8', '9', '(', ')',
-                                        '-', '+', '*', '/', '^', '.'};
+  const unordered_set<char> char_set = {'0', '1', '2', '3', '4', '5', '6',
+                                        '7', '8', '9', '(', ')', '-', '+',
+                                        '*', '/', '^', '.', 'x'};
 
   for (char c : function_str) {
     if (char_set.find(c) == char_set.end()) {

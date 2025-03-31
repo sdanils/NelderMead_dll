@@ -7,6 +7,10 @@
 
 using std::string;
 
+VariableNode::VariableNode(const string& name_) { name = name_; }
+
+double VariableNode::evaluate() { return Solution::get(name); }
+
 NumberNode::NumberNode(const string& number_) { number = std::stod(number_); }
 
 double NumberNode::evaluate() { return number; }
@@ -43,7 +47,10 @@ double OperatorNode::evaluate() {
   }
 }
 
-ExpressionTree::ExpressionTree(TreeNode* root_) { root = root_; }
+ExpressionTree::ExpressionTree(TreeNode* root_) {
+  root = root_;
+  number_variable = 0;
+}
 
 ExpressionTree::~ExpressionTree() { delete root; }
 
@@ -53,3 +60,20 @@ double ExpressionTree::evaluate() {
   }
   return (double)0;
 }
+
+void Solution::set(const string& name, double value) {
+  variables[name] = value;
+}
+
+double Solution::get(const string& name) {
+  double it = variables[name];
+  return it;
+}
+
+bool Solution::exists(const string& name) {
+  return variables.find(name) != variables.end();
+}
+
+void Solution::remove(const std::string& name) { variables.erase(name); }
+
+void Solution::clear() { variables.clear(); }

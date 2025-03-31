@@ -25,7 +25,11 @@ ExpressionTree* rpn_expr_to_tree(vector<string>& rpn_expression) {
 
       st.push(new OperatorNode(token[0], left, right));
     } else {
-      st.push(new NumberNode(token));
+      if (token[0] == 'x') {
+        st.push(new VariableNode(token));
+      } else {
+        st.push(new NumberNode(token));
+      }
     }
   }
 

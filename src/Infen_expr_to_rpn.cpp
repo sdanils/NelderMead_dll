@@ -17,7 +17,7 @@ vector<string> infen_expr_to_rpn(const string& infenex_expr) {
   string number;
 
   for (char c : infenex_expr) {
-    if (isdigit(c) || c == '.') {
+    if (isdigit(c) || c == '.' || c == 'x') {
       number += c;
     } else {
       if (!number.empty()) {
