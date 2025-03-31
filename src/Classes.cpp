@@ -47,10 +47,7 @@ double OperatorNode::evaluate() {
   }
 }
 
-ExpressionTree::ExpressionTree(TreeNode* root_) {
-  root = root_;
-  number_variable = 0;
-}
+ExpressionTree::ExpressionTree(TreeNode* root_) { root = root_; }
 
 ExpressionTree::~ExpressionTree() { delete root; }
 

@@ -71,7 +71,6 @@ class OperatorNode : public TreeNode {
 class NELDERMID_API ExpressionTree {
  private:
   TreeNode* root;
-  int number_variable;
 
  public:
   ExpressionTree(TreeNode* root_);
