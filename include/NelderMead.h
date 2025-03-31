@@ -8,7 +8,7 @@ extern "C" {
 
 NELDERMID_API ExpressionTree* build_tree(const char* function_str);
 
-NELDERMID_API double evaluate_tree(ExpressionTree* tree);
+NELDERMID_API double evaluate_tree(ExpressionTree* trее);
 
 #ifdef __cplusplus
 }
