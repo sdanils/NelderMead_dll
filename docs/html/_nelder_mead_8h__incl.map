@@ -1,0 +1,9 @@
+<map id="include/NelderMead.h" name="include/NelderMead.h">
+<area shape="rect" id="Node000001" title="API для работы с деревьями выражений и переменными" alt="" coords="5,5,152,31"/>
+<area shape="rect" id="Node000002" href="$_classes_8h.html" title=" " alt="" coords="39,79,119,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,31,81,65,76,65,76,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="18,152,65,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="75,106,56,141,51,139,70,103"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="89,152,143,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="87,103,106,139,101,141,82,106"/>
+</map>

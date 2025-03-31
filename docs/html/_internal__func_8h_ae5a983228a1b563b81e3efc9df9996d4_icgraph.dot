@@ -1,0 +1,11 @@
+digraph "rpn_expr_to_tree"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="rpn_expr_to_tree",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="create_tree",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group___core_a_p_i.html#ga38511e040cfb3bcf9117c22ac6eb5f68",tooltip="Создает дерево выражений из строки"];
+}

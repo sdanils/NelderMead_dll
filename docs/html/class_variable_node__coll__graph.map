@@ -1,0 +1,5 @@
+<map id="VariableNode" name="VariableNode">
+<area shape="rect" id="Node000001" title="Узел дерева для переменных" alt="" coords="5,149,137,245"/>
+<area shape="rect" id="Node000002" href="$class_tree_node.html" title="Абстрактный базовый класс узла дерева выражений" alt="" coords="12,5,131,101"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="74,115,74,149,69,149,69,115"/>
+</map>

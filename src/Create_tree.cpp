@@ -8,7 +8,18 @@
 using std::string;
 using std::vector;
 
-ExpressionTree* creat_tree(const char* function_str_c) {
+/**
+ * @brief Создает дерево выражений из строки
+ * @param function_str_c C-строка с выражением
+ * @return Указатель на дерево или nullptr при ошибке
+ * @details Этапы обработки:
+ * 1. Проверка корректности строки
+ * 2. Преобразование в обратную польскую нотацию
+ * 3. Построение дерева выражений
+ *
+ * @see check_correct(), infen_expr_to_rpn(), rpn_expr_to_tree()
+ */
+ExpressionTree* create_tree(const char* function_str_c) {
   string function_str = check_correct(function_str_c);
   if (function_str == "f") {
     return nullptr;
