@@ -20,9 +20,15 @@ bool check_chars(const string& function_str) {
 }
 
 string create_string(const char* function_str_c) {
-  string function_str(function_str_c);
-  function_str.erase(std::remove(function_str.begin(), function_str.end(), ' '),
-                     function_str.end());
+  if (!function_str_c) return "";
+
+  string function_str;
+  for (int i = 0; function_str_c[i] != '\0'; i++) {
+    char c = function_str_c[i];
+    if (c != ' ') {
+      function_str += c;
+    }
+  }
 
   if (check_chars(function_str)) return function_str;
 
