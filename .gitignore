@@ -1,0 +1,11 @@
+*
+
+!.gitignore
+!README.md
+!Doxyfile
+!CMakeLists.txt
+
+!src/
+!include/
+!docs/index.md
+
