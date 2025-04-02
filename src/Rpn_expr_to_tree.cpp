@@ -2,8 +2,8 @@
 #include <string>
 #include <vector>
 
-#include "Classes.h"
-#include "Internal_func.h"
+#include "classes.h"
+#include "internal_func.h"
 
 using std::stack;
 using std::string;
@@ -13,7 +13,7 @@ ExpressionTree* rpn_expr_to_tree(vector<string>& rpn_expression) {
   stack<TreeNode*> st;
 
   for (const string& token : rpn_expression) {
-    if (is_operator(token)) {
+    if (Operators::is_operator(token)) {
       if (st.size() < 2) {
         return nullptr;
       }

@@ -1,7 +1,7 @@
 #include <string>
 #include <unordered_set>
 
-#include "Internal_func.h"
+#include "internal_func.h"
 
 using std::string;
 using std::unordered_set;
@@ -19,7 +19,7 @@ bool check_chars(const string& function_str) {
   return true;
 }
 
-string check_correct(const char* function_str_c) {
+string create_string(const char* function_str_c) {
   string function_str(function_str_c);
   function_str.erase(std::remove(function_str.begin(), function_str.end(), ' '),
                      function_str.end());

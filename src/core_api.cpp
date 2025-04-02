@@ -1,8 +1,8 @@
-#include "NelderMead.h"
+#include "core_api.h"
 
 #include <string>
 
-#include "Classes.h"
+#include "classes.h"
 
 using std::string;
 using std::to_string;

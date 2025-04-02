@@ -1,9 +1,9 @@
 #include <string>
 #include <vector>
 
-#include "Classes.h"
-#include "Internal_func.h"
-#include "NelderMead.h"
+#include "classes.h"
+#include "core_api.h"
+#include "internal_func.h"
 
 using std::string;
 using std::vector;
@@ -20,7 +20,7 @@ using std::vector;
  * @see check_correct(), infen_expr_to_rpn(), rpn_expr_to_tree()
  */
 ExpressionTree* create_tree(const char* function_str_c) {
-  string function_str = check_correct(function_str_c);
+  string function_str = create_string(function_str_c);
   if (function_str == "f") {
     return nullptr;
   }

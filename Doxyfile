@@ -2999,7 +2999,7 @@ SUBGROUPING            = YES
 # Создать отдельную страницу для групп
 SHOW_GROUPED_MEMB_INC = YES
 
-GENERATE_LATEX         = YES
-LATEX_OUTPUT           = latex
-LATEX_CMD_NAME         = pdflatex
-PDF_HYPERLINKS         = YES
+#GENERATE_LATEX         = YES
+#LATEX_OUTPUT           = latex
+#LATEX_CMD_NAME         = pdflatex
+#PDF_HYPERLINKS         = YES

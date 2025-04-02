@@ -3,8 +3,8 @@
 #include <unordered_set>
 #include <vector>
 
-#include "Classes.h"
-#include "Internal_func.h"
+#include "classes.h"
+#include "internal_func.h"
 
 using std::stack;
 using std::string;
@@ -24,7 +24,7 @@ vector<string> infen_expr_to_rpn(const string& infenex_expr) {
         rpn_expr.push_back(number);
         number.clear();
       }
-      if (is_operator(c)) {
+      if (Operators::is_operator(c)) {
         while (!operators.empty() && operators.top() != '(' &&
                Operators::precedence[operators.top()] >=
                    Operators::precedence[c]) {
