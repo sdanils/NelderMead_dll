@@ -1,9 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$class_tree_node.html" title="Абстрактный базовый класс узла дерева выражений" alt="" coords="5,55,83,80"/>
-<area shape="rect" id="Node000001" href="$class_number_node.html" title="Узел дерева для числовых констант" alt="" coords="133,5,231,31"/>
-<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="92,47,145,28,146,33,94,52"/>
-<area shape="rect" id="Node000002" href="$class_operator_node.html" title="Узел дерева для операторов" alt="" coords="131,55,233,80"/>
-<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="96,65,130,65,130,70,96,70"/>
-<area shape="rect" id="Node000003" href="$class_variable_node.html" title="Узел дерева для переменных" alt="" coords="133,104,231,129"/>
-<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="94,82,146,101,145,106,92,87"/>
-</map>

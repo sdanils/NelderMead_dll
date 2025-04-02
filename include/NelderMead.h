@@ -4,7 +4,7 @@
  */
 
 /**
- * @defgroup CoreAPI Functions
+ * @defgroup CoreAPI Core API Functions
  * @brief Основные функции для работы с деревьями выражений
  * @{
  */
@@ -22,6 +22,7 @@ extern "C" {
  * sin(x2)")
  * @return Указатель на созданное дерево выражений или nullptr при ошибке
  * @warning Строка должна содержать корректное математическое выражение
+ * @ingroup CoreAPI
  */
 NELDERMID_API ExpressionTree* create_tree(const char* function_str);
 
@@ -29,6 +30,7 @@ NELDERMID_API ExpressionTree* create_tree(const char* function_str);
  * @brief Вычисляет значение дерева выражений
  * @param tree Указатель на валидное дерево выражений
  * @return Результат вычисления
+ * @ingroup CoreAPI
  */
 NELDERMID_API double evaluate_tree(ExpressionTree* trее);
 
@@ -38,6 +40,7 @@ NELDERMID_API double evaluate_tree(ExpressionTree* trее);
  * @param variables Массив значений (x1, x2, ..., xn)
  * @details Создает переменные с именами "x1", "x2" и т.д.
  * @note Перезаписывает существующие переменные с такими именами
+ * @ingroup CoreAPI
  */
 NELDERMID_API void create_solution(const int num_variable,
                                    const double* variables);

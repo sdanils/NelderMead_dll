@@ -1,5 +1,0 @@
-<map id="evaluate_tree" name="evaluate_tree">
-<area shape="rect" id="Node000001" title="Вычисляет значение дерева выражений" alt="" coords="5,5,104,31"/>
-<area shape="rect" id="Node000002" href="$class_expression_tree.html#a389867dee593b2dd12edcf06c0187236" title="Вычисляет значение выражения" alt="" coords="152,5,319,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,15,138,15,138,21,104,21"/>
-</map>

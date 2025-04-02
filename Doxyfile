@@ -2964,9 +2964,14 @@ MSCGEN_TOOL            =
 
 MSCFILE_DIRS           =
 
+
+# Создать отдельную страницу для групп
+SHOW_GROUPED_MEMB_INC = YES
+
 PROJECT_NAME           = "Nelder-Mid Library"
 OUTPUT_DIRECTORY       = docs
-INPUT                  = .
+INPUT                  = include src docs/index.md
+
 RECURSIVE              = YES
 EXTRACT_ALL            = YES
 EXTRACT_PRIVATE        = NO
@@ -2983,14 +2988,9 @@ MACRO_EXPANSION        = YES
 EXPAND_ONLY_PREDEF     = YES
 PREDEFINED            = NELDERMID_API=
 
-USE_MDFILE_AS_MAINPAGE =
-HTML_HEADER          =
-HTML_FOOTER          =
+USE_MATHJAX            = YES
 
-# Отключаем навигационные картинки
-DISABLE_INDEX        = YES
-GENERATE_TREEVIEW    = NO
-SEARCHENGINE         = NO
+MAIN_PAGE = docs/index.md
 
 # Включить группировку
 GROUP_NESTED_COMPOUNDS = YES
@@ -2998,3 +2998,8 @@ SUBGROUPING            = YES
 
 # Создать отдельную страницу для групп
 SHOW_GROUPED_MEMB_INC = YES
+
+GENERATE_LATEX         = YES
+LATEX_OUTPUT           = latex
+LATEX_CMD_NAME         = pdflatex
+PDF_HYPERLINKS         = YES
