@@ -6,7 +6,7 @@
 !CMakeLists.txt
 
 !src/
-!include/
+!include/*
 !docs/index.md
 !docs/uml.png
 
