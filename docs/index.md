@@ -64,3 +64,5 @@ culc_dll.create_solution(num_v, c_array)
 print(culc_dll.evaluate_tree(tree_ptr))
 ```
 
+# UML дерева выражения
+![UML диаграмма классов выражения](../uml.png)
