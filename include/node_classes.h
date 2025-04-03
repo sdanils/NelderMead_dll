@@ -11,8 +11,10 @@
 #endif
 
 #include <string>
+#include <vector>
 
 using std::string;
+using std::vector;
 
 /**
  * @class TreeNode
@@ -24,9 +26,10 @@ class TreeNode {
 
   /**
    * @brief Вычисляет значение узла
+   * @param variables вектор значений переменных
    * @return Результат вычисления
    */
-  virtual double evaluate() = 0;
+  virtual double evaluate(vector<double>& variables) = 0;
 };
 
 /**
@@ -46,7 +49,14 @@ class VariableNode : public TreeNode {
    * @return Значение переменной
    * @throw std::out_of_range Если переменная не существует
    */
-  double evaluate() override;
+  double evaluate(vector<double>& variables) override;
+  /**
+   * @brief Возвращает номер переменной
+   * @details Возвращает номер переменно в типе int. Нужен для получения
+   * значения переменной из вектора значений.
+   * @return Номер переменной
+   */
+  int get_number_variable();
 };
 
 /**
@@ -58,14 +68,14 @@ class NumberNode : public TreeNode {
   double number;  ///< Числовое значение
 
  public:
-  NumberNode(const string& number);
+  NumberNode(const double& number);
 
   /**
    * @brief Конструктор числового узла
    * @param number Строковое представление числа
    * @throw std::invalid_argument Если строка не является числом
    */
-  double evaluate() override;
+  double evaluate(vector<double>& variables) override;
 };
 
 /**
@@ -87,5 +97,5 @@ class OperatorNode : public TreeNode {
    * @return Результат операции
    * @throw std::runtime_error При ошибке вычисления
    */
-  double evaluate() override;
+  double evaluate(vector<double>& variables) override;
 };

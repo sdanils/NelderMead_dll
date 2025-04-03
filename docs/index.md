@@ -16,26 +16,23 @@
 <big>На данном этапе классы представляющие элементы дерева не доступны к эспортированию и не будут описаны.</big>
 ## Функции
 
-- double evaluate_tree(ExpressionTree* tree).
+- double evaluate_tree(ExpressionTree* tree, const int number_variable,
+                                   const double* variables).
     - Вычисляет значение выражения, хранящегося в в дереве.
     - Возвращает результат выражения.
-    - Принимает указатель на дерево выражения.
+    - Принимает указатель на дерево выражения, число перевенных и вектор значений.
+    - Выбросит исключение в случае исключения.
 - ExpressionTree* create_tree(const char* function_str).
     - Создает дерево выражения из строки в инфиксной записи.
     - Возвращает ссылку на созданный объект дерева.
     - Принимает строку типу С с инфиксным выражением.
-- void create_solution(const int num_variable, const double* variables);
-    - Сохраняет вектор переменных в статическую память для вычисления выражения.
-    - Возвращает void. Операция всегда выполняетс успешно.
-    - Принимает число переменных в дереве(num_variable) и вектор double в формете С массива. 
+.
 
 # Использование 
 1. Экспортируйте библиотеку в проект.
 2. Используйте функцию create_tree(string), что бы создать дерево выражения. <BIG>Передоваемая строка должна включать корректное инфиксное выражение с переменными. Переменные записываются в формате "x{i}". i принимает значения от 1. </BIG>  
-3. Для задания вектора переменных используется функция create_solution(int, double*). 
-4. Результат выражения возвращает функция evaluate_tree(ExpressionTree* tree).
-
-<BIG>При вычислении выражения, используются переменные сохранённые функцией create_solution(). Если она не была вызвана, вычисление невозможно.</BIG>
+3. Результат выражения возвращает функция evaluate_tree(ExpressionTree* tree, const int number_variable,
+                                   const double* variables).
 
 # Пример на Python
 ```python
@@ -59,9 +56,8 @@ tree_ptr = culc_dll.create_tree(expr_bytes)
 variables = [0.123213, 4, 3, 0.10]
 num_v = len(variables)
 c_array = (c.c_double * num_v)(*variables)
-culc_dll.create_solution(num_v, c_array)
 
-print(culc_dll.evaluate_tree(tree_ptr))
+print(culc_dll.evaluate_tree(tree_ptr, num_v, c_array))
 ```
 
 # UML дерева выражения

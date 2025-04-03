@@ -20,7 +20,9 @@ bool check_chars(const string& function_str) {
 }
 
 string create_string(const char* function_str_c) {
-  if (!function_str_c) return "";
+  if (!function_str_c) {
+    return "";
+  }
 
   string function_str;
   for (int i = 0; function_str_c[i] != '\0'; i++) {
@@ -30,7 +32,9 @@ string create_string(const char* function_str_c) {
     }
   }
 
-  if (check_chars(function_str)) return function_str;
+  if (check_chars(function_str)) {
+    return function_str;
+  }
 
-  return "f";
+  return "";
 }

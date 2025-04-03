@@ -21,7 +21,7 @@ using std::vector;
  */
 ExpressionTree* create_tree(const char* function_str_c) {
   string function_str = create_string(function_str_c);
-  if (function_str == "f") {
+  if (function_str == "") {
     return nullptr;
   }
 

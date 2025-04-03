@@ -11,6 +11,7 @@ using std::vector;
 
 ExpressionTree* rpn_expr_to_tree(vector<string>& rpn_expression) {
   stack<TreeNode*> st;
+  int number_variables = 0;
 
   for (const string& token : rpn_expression) {
     if (Operators::is_operator(token)) {
@@ -27,8 +28,10 @@ ExpressionTree* rpn_expr_to_tree(vector<string>& rpn_expression) {
     } else {
       if (token[0] == 'x') {
         st.push(new VariableNode(token));
+        number_variables++;
       } else {
-        st.push(new NumberNode(token));
+        double token_value = std::stod(token);
+        st.push(new NumberNode(token_value));
       }
     }
   }
@@ -37,6 +40,6 @@ ExpressionTree* rpn_expr_to_tree(vector<string>& rpn_expression) {
     return nullptr;
   }
 
-  ExpressionTree* tree = new ExpressionTree(st.top());
+  ExpressionTree* tree = new ExpressionTree(st.top(), number_variables);
   return tree;
 }

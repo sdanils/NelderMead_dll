@@ -1,40 +1,32 @@
 #include "classes.h"
 
-#include <limits.h>
-#include <math.h>
+#include <vector>
 
-#include <string>
+using std::vector;
 
-#include "node_classes.h"
-
-using std::string;
-
-ExpressionTree::ExpressionTree(TreeNode* root_) { root = root_; }
+ExpressionTree::ExpressionTree(TreeNode* root_, int number_variable_) {
+  root = root_;
+  number_variable = number_variable_;
+}
 
 ExpressionTree::~ExpressionTree() { delete root; }
 
-double ExpressionTree::evaluate() {
+double ExpressionTree::evaluate(const int number_variable,
+                                const double* variables) {
+  vector<double> vector_variables =
+      vector<double>(variables, variables + number_variable);
+
   if (root != nullptr) {
-    return root->evaluate();
+    return root->evaluate(vector_variables);
+  } else {
+    return (double)0;
   }
-  return (double)0;
 }
 
-std::map<string, double> Solution::variables;
-
-void Solution::set(const string& name, double value) {
-  variables[name] = value;
-}
-
-double Solution::get(const string& name) {
-  double it = variables[name];
-  return it;
-}
-
-bool Solution::exists(const string& name) {
-  return variables.find(name) != variables.end();
-}
-
-void Solution::remove(const std::string& name) { variables.erase(name); }
-
-void Solution::clear() { variables.clear(); }
+bool ExpressionTree::check_number_variables(int number_variables_) {
+  if (number_variable == number_variables_) {
+    return true;
+  } else {
+    return false;
+  }
+};

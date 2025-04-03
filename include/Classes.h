@@ -9,48 +9,36 @@ using std::map;
 using std::string;
 
 /**
- * @class Solution
- * @brief Набор значений переменных
- * @details Хранит значение переменных
- * @warning Должен быть инициализировать до вычисления значения выражения
- */
-class Solution {
- public:
-  static map<string, double> variables;
-
- public:
-  /**
-   * @brief Сохраяет значение переменной
-   * @param name Имя переменной
-   * @param value Значение переменной
-   */
-  static void set(const string& name, double value);
-  /**
-   * @brief возвращает значение переменной
-   * @param name Имя переменной
-   * @return Значение переменной
-   */
-  static double get(const string& name);
-  static bool exists(const string& name);
-  static void remove(const std::string& name);
-  static void clear();
-};
-
-/**
  * @class ExpressionTree
  * @brief Класс для представления и вычисления выражений
+ * @details Содержит ссылку на корень дерева выражения и число переменных в
+ * дереве.
  */
 class NELDERMID_API ExpressionTree {
  private:
-  TreeNode* root;  ///< Корень дерева выражений
+  TreeNode* root;       ///< Корень дерева выражений
+  int number_variable;  ///< Число переменных в дереве выражений
 
  public:
-  ExpressionTree(TreeNode* root_);
+  /**
+   * @brief Конструктор дерева.
+   * @param root_ Корень дерева
+   * @param number_variable_ Число переменных в дереве
+   */
+  ExpressionTree(TreeNode* root_, int number_variable_);
   ~ExpressionTree();
 
   /**
    * @brief Вычисляет значение выражения
    * @return Результат вычисления
    */
-  double evaluate();
+  double evaluate(const int number_variable, const double* variables);
+  /**
+   * @brief Проверяет число переменных
+   * @details Проверяет переданное число на равенство хранящемуся числу
+   * переменных в дереве
+   * @param number_variables Предпологаемое число переменных
+   * @return Результат проверки
+   */
+  bool check_number_variables(int number_variables);
 };

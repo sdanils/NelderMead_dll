@@ -4,18 +4,33 @@
 #include <math.h>
 
 #include <string>
+#include <vector>
 
 #include "classes.h"
 
 using std::string;
+using std::vector;
 
 VariableNode::VariableNode(const string& name_) { name = name_; }
 
-double VariableNode::evaluate() { return Solution::get(name); }
+/**
+ * @brief Возвращает соответствующее значение переменной из вектора значений
+ * variables
+ */
+double VariableNode::evaluate(vector<double>& variables) {
+  int num_variable = get_number_variable();
+  return variables[num_variable - 1];
+}
 
-NumberNode::NumberNode(const string& number_) { number = std::stod(number_); }
+int VariableNode::get_number_variable() {
+  string number_variable = string(name.begin() + 1, name.end());
+  int num_variable = std::stoi(number_variable);
+  return num_variable;
+}
 
-double NumberNode::evaluate() { return number; }
+NumberNode::NumberNode(const double& number_) { number = number_; }
+
+double NumberNode::evaluate(vector<double>& variables) { return number; }
 
 OperatorNode::OperatorNode(const char oper_, TreeNode* left, TreeNode* right) {
   oper = oper_;
@@ -28,9 +43,9 @@ OperatorNode::~OperatorNode() {
   delete right_child;
 }
 
-double OperatorNode::evaluate() {
-  double left_val = left_child->evaluate();
-  double right_val = right_child->evaluate();
+double OperatorNode::evaluate(vector<double>& variables) {
+  double left_val = left_child->evaluate(variables);
+  double right_val = right_child->evaluate(variables);
 
   switch (oper) {
     case '+':

@@ -19,7 +19,7 @@ class Operators {
 /**
  * @brief Преобразует Вектор строк, который является постфиксной записью
  * переданного выражения, в дерево выражения
- * @param rpn_expression Вектор постфиксного выражения
+ * @param rpn_expression Вектор представляющий постфиксное выражение
  * @return Ссылку на дерево выражения
  */
 ExpressionTree* rpn_expr_to_tree(vector<string>& rpn_expression);
