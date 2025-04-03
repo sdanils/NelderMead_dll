@@ -46,9 +46,6 @@ culc_dll.create_tree.restype = c.c_void_p
 culc_dll.evaluate_tree.argtypes = [c.c_void_p]
 culc_dll.evaluate_tree.restype = c.c_double
 
-culc_dll.create_solution.argtypes = [c.c_int, c.POINTER(c.c_double)]
-culc_dll.create_solution.restype = None
-
 expr = "x1^2/2-9/x2 * ((2 + x3)*x4)"
 expr_bytes = expr.encode('utf-8')
 tree_ptr = culc_dll.create_tree(expr_bytes)
