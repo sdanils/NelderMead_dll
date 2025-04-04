@@ -9,10 +9,6 @@
 using std::map;
 using std::string;
 
-#ifdef NELDERMID_API
-extern "C" {
-#endif
-
 /**
  * @class ExpressionTree
  * @brief Класс для представления и вычисления выражений
@@ -47,7 +43,3 @@ class NELDERMID_API ExpressionTree {
    */
   bool check_number_variables(int number_variables);
 };
-
-#ifdef NELDERMID_API
-}
-#endif
