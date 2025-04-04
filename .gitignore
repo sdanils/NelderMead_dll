@@ -1,14 +1,7 @@
-*
+.vscode/
+build/
 
-!.gitignore
-!README.md
-!Doxyfile
-!CMakeLists.txt
-
-!src/
-!src/*
-!include/
-!include/*
+docs/*
 !docs/
 !docs/index.md
 !docs/uml.png
