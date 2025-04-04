@@ -1,7 +1,5 @@
 #include "core_api.h"
 
-#include <stdexcept>
-
 #include "classes.h"
 
 /**
@@ -10,8 +8,7 @@
 double evaluate_tree(ExpressionTree* tree, const int number_variable,
                      const double* variables) {
   if (!tree->check_number_variables(number_variable)) {
-    throw std::runtime_error(
-        "Ошибка: число переменных не соответствует дереву выражения.");
+    return 0.0;
   }
 
   return tree->evaluate(number_variable, variables);

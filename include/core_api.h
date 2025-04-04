@@ -11,8 +11,9 @@
 #pragma once
 
 #include "classes.h"
+#include "dll_api.h"
 
-#ifdef __cplusplus
+#ifdef NELDERMID_API
 extern "C" {
 #endif
 

@@ -3,10 +3,15 @@
 #include <map>
 #include <string>
 
+#include "dll_api.h"
 #include "node_classes.h"
 
 using std::map;
 using std::string;
+
+#ifdef NELDERMID_API
+extern "C" {
+#endif
 
 /**
  * @class ExpressionTree
@@ -42,3 +47,7 @@ class NELDERMID_API ExpressionTree {
    */
   bool check_number_variables(int number_variables);
 };
+
+#ifdef NELDERMID_API
+}
+#endif

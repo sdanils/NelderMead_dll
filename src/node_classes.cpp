@@ -62,4 +62,6 @@ double OperatorNode::evaluate(vector<double>& variables) {
     case '^':
       return pow(left_val, right_val);
   }
+
+  return 0.0;
 }
