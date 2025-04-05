@@ -1,0 +1,8 @@
+.vscode/
+build/
+
+docs/*
+!docs/
+!docs/index.md
+!docs/uml.png
+
