@@ -7,7 +7,7 @@ using std::map;
 using std::string;
 
 map<char, int> Operators::precedence = {
-    {'+', 1}, {'-', 1}, {'*', 2}, {'/', 2}, {'^', 2}};
+    {'+', 1}, {'-', 1}, {'*', 2}, {'/', 2}, {'^', 3}};
 
 bool Operators::is_operator(char c) {
   return Operators::precedence.find(c) != Operators::precedence.end();

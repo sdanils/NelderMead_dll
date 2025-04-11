@@ -1,8 +1,10 @@
+#pragma once
+
 #include <map>
 #include <string>
 #include <vector>
 
-#include "classes.h"
+#include "expression_tree.h"
 
 using std::map;
 using std::string;
@@ -15,14 +17,6 @@ class Operators {
   static bool is_operator(char c);
   static bool is_operator(const string& c);
 };
-
-/**
- * @brief Преобразует Вектор строк, который является постфиксной записью
- * переданного выражения, в дерево выражения
- * @param rpn_expression Вектор представляющий постфиксное выражение
- * @return Ссылку на дерево выражения
- */
-ExpressionTree* rpn_expr_to_tree(vector<string>& rpn_expression);
 
 /**
  * @brief Преобразует строку инфенсного выражения в вектор строк, который
