@@ -24,8 +24,10 @@ void delete_tree(ExpressionTree* tree) { delete tree; };
 
 char* print_tree(ExpressionTree* trее) {
   string tree_str = trее->json_tree();
-  char* buffer = new char[tree_str.size() + 1];
-  strcpy_s(buffer, tree_str.size() + 1, tree_str.c_str());
+  size_t buffer_size = tree_str.size() + 1;
+  char* buffer = new char[buffer_size];
+  strncpy(buffer, tree_str.c_str(), buffer_size);
+  buffer[buffer_size - 1] = '\0';
   return buffer;
 };
 
