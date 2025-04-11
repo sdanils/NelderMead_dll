@@ -3,23 +3,29 @@
 #include <limits.h>
 #include <math.h>
 
+#include <nlohmann/json.hpp>
 #include <string>
 #include <vector>
 
-#include "classes.h"
+#include "expression_tree.h"
 
+using nlohmann::json;
 using std::string;
 using std::vector;
 
 VariableNode::VariableNode(const string& name_) { name = name_; }
 
-/**
- * @brief Возвращает соответствующее значение переменной из вектора значений
- * variables
- */
 double VariableNode::evaluate(vector<double>& variables) {
   int num_variable = get_number_variable();
   return variables[num_variable - 1];
+}
+
+string VariableNode::get_elem() { return name; }
+
+json VariableNode::to_json() {
+  json j;
+  j["value"] = get_elem();
+  return j;
 }
 
 int VariableNode::get_number_variable() {
@@ -31,6 +37,14 @@ int VariableNode::get_number_variable() {
 NumberNode::NumberNode(const double& number_) { number = number_; }
 
 double NumberNode::evaluate(vector<double>& variables) { return number; }
+
+string NumberNode::get_elem() { return std::to_string(number); }
+
+json NumberNode::to_json() {
+  json j;
+  j["value"] = get_elem();
+  return j;
+}
 
 OperatorNode::OperatorNode(const char oper_, TreeNode* left, TreeNode* right) {
   oper = oper_;
@@ -64,4 +78,15 @@ double OperatorNode::evaluate(vector<double>& variables) {
   }
 
   return 0.0;
+}
+
+string OperatorNode::get_elem() { return string(1, oper); }
+
+json OperatorNode::to_json() {
+  json j;
+  j["value"] = get_elem();
+  j["children"] = json::array();
+  j["children"].push_back(left_child->to_json());
+  j["children"].push_back(right_child->to_json());
+  return j;
 }

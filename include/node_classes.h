@@ -1,11 +1,12 @@
 #pragma once
 
+#include <nlohmann/json.hpp>
 #include <string>
 #include <vector>
 
+using nlohmann::json;
 using std::string;
 using std::vector;
-
 /**
  * @class TreeNode
  * @brief Абстрактный базовый класс узла дерева выражений
@@ -20,6 +21,13 @@ class TreeNode {
    * @return Результат вычисления
    */
   virtual double evaluate(vector<double>& variables) = 0;
+  /**
+   * @brief Возвращает строку предстовялющую значение переменной
+   * @return Строка результат
+   */
+  virtual string get_elem() = 0;
+
+  virtual json to_json() = 0;
 };
 
 /**
@@ -47,6 +55,10 @@ class VariableNode : public TreeNode {
    * @return Номер переменной
    */
   int get_number_variable();
+
+  string get_elem() override;
+
+  json to_json();
 };
 
 /**
@@ -66,6 +78,10 @@ class NumberNode : public TreeNode {
    * @throw std::invalid_argument Если строка не является числом
    */
   double evaluate(vector<double>& variables) override;
+
+  string get_elem() override;
+
+  json to_json();
 };
 
 /**
@@ -88,4 +104,8 @@ class OperatorNode : public TreeNode {
    * @throw std::runtime_error При ошибке вычисления
    */
   double evaluate(vector<double>& variables) override;
+
+  string get_elem() override;
+
+  json to_json();
 };

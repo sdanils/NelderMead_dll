@@ -1,12 +1,10 @@
 #pragma once
 
-#include <map>
 #include <string>
 
 #include "dll_api.h"
 #include "node_classes.h"
 
-using std::map;
 using std::string;
 
 /**
@@ -20,15 +18,28 @@ class NELDERMID_API ExpressionTree {
   TreeNode* root;       ///< Корень дерева выражений
   int number_variable;  ///< Число переменных в дереве выражений
 
- public:
   /**
    * @brief Конструктор дерева.
    * @param root_ Корень дерева
    * @param number_variable_ Число переменных в дереве
    */
   ExpressionTree(TreeNode* root_, int number_variable_);
-  ~ExpressionTree();
 
+ public:
+  /**
+   * @brief Деструктор дерева
+   * @details Очищает память с узлами
+   */
+  ~ExpressionTree();
+  /**
+   * @brief Фабричный метод создания обьекта дерева выражения
+   * @details Преобразует Вектор строк, который является постфиксной записью
+   * переданного выражения, в дерево выражения
+   * @param rpn_expression Вектор строк представляющий постфиксную запись
+   *выражения
+   * @return Ссылку на созданный обьект дерева
+   **/
+  static ExpressionTree* create_tree(vector<string>& rpn_expression);
   /**
    * @brief Вычисляет значение выражения
    * @return Результат вычисления
@@ -42,4 +53,14 @@ class NELDERMID_API ExpressionTree {
    * @return Результат проверки
    */
   bool check_number_variables(int number_variables);
+  /**
+   * @brief Создаёт строку представляющую дерево в формате JSON
+   * @return Строка с деревом в формате JSON
+   */
+  string json_tree();
+  /**
+   * @brief Метод для полуения числа переменных в дереве
+   * @return Число переменных в дереве
+   */
+  int get_number_variables();
 };

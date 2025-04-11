@@ -1,8 +1,8 @@
 #include <string>
 #include <vector>
 
-#include "classes.h"
 #include "core_api.h"
+#include "expression_tree.h"
 #include "internal_func.h"
 
 using std::string;
@@ -30,5 +30,5 @@ ExpressionTree* create_tree(const char* function_str_c) {
     return nullptr;
   }
 
-  return rpn_expr_to_tree(rpn_expression);
+  return ExpressionTree::create_tree(rpn_expression);
 }
