@@ -1,6 +1,7 @@
 #include "expression_tree.h"
 
 #include <nlohmann/json.hpp>
+#include <optional>
 #include <stack>
 #include <string>
 #include <unordered_set>
@@ -8,8 +9,11 @@
 
 #include "internal_func.h"
 #include "node_classes.h"
+#include "response_class.h"
 
 using nlohmann::json;
+using std::nullopt;
+using std::optional;
 using std::stack;
 using std::string;
 using std::unordered_set;
@@ -61,15 +65,19 @@ ExpressionTree* ExpressionTree::create_tree(vector<string>& rpn_expression) {
   return tree;
 }
 
-double ExpressionTree::evaluate(const int number_variable,
-                                const double* variables) {
+Response<double>* ExpressionTree::evaluate(const int number_variable,
+                                           const double* variables) {
   vector<double> vector_variables =
       vector<double>(variables, variables + number_variable);
 
   if (root != nullptr) {
-    return root->evaluate(vector_variables);
+    optional<double> result_opt = root->evaluate(vector_variables);
+    if (!result_opt.has_value()) {
+      return new Response<double>(0.0, "error: Calculation error");
+    };
+    return new Response<double>(result_opt.value(), "OK");
   } else {
-    return (double)0;
+    return new Response<double>(0.0, "error: There is no tree root");
   }
 }
 

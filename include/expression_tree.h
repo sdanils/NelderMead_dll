@@ -2,8 +2,8 @@
 
 #include <string>
 
-#include "dll_api.h"
 #include "node_classes.h"
+#include "response_class.h"
 
 using std::string;
 
@@ -13,7 +13,7 @@ using std::string;
  * @details Содержит ссылку на корень дерева выражения и число переменных в
  * дереве.
  */
-class NELDERMID_API ExpressionTree {
+class ExpressionTree {
  private:
   TreeNode* root;       ///< Корень дерева выражений
   int number_variable;  ///< Число переменных в дереве выражений
@@ -42,9 +42,10 @@ class NELDERMID_API ExpressionTree {
   static ExpressionTree* create_tree(vector<string>& rpn_expression);
   /**
    * @brief Вычисляет значение выражения
-   * @return Результат вычисления
+   * @return Объект Response
    */
-  double evaluate(const int number_variable, const double* variables);
+  Response<double>* evaluate(const int number_variable,
+                             const double* variables);
   /**
    * @brief Проверяет число переменных
    * @details Проверяет переданное число на равенство хранящемуся числу

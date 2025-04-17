@@ -1,10 +1,12 @@
 #pragma once
 
 #include <nlohmann/json.hpp>
+#include <optional>
 #include <string>
 #include <vector>
 
 using nlohmann::json;
+using std::optional;
 using std::string;
 using std::vector;
 /**
@@ -17,10 +19,10 @@ class TreeNode {
 
   /**
    * @brief Вычисляет значение узла
-   * @param variables вектор значений переменных
-   * @return Результат вычисления
+   * @param variables Вектор значений переменных
+   * @return Результат вычисления или nullopt, есди вычисление невозможно
    */
-  virtual double evaluate(vector<double>& variables) = 0;
+  virtual optional<double> evaluate(vector<double>& variables) = 0;
   /**
    * @brief Возвращает строку предстовялющую значение переменной
    * @return Строка результат
@@ -44,10 +46,9 @@ class VariableNode : public TreeNode {
 
   /**
    * @brief Возвращает значение переменной
-   * @return Значение переменной
-   * @throw std::out_of_range Если переменная не существует
+   * @return Результат вычисления или nullopt, есди вычисление невозможно
    */
-  double evaluate(vector<double>& variables) override;
+  optional<double> evaluate(vector<double>& variables) override;
   /**
    * @brief Возвращает номер переменной
    * @details Возвращает номер переменно в типе int. Нужен для получения
@@ -75,9 +76,9 @@ class NumberNode : public TreeNode {
   /**
    * @brief Конструктор числового узла
    * @param number Строковое представление числа
-   * @throw std::invalid_argument Если строка не является числом
+   * @return Результат вычисления или nullopt, есди вычисление невозможно
    */
-  double evaluate(vector<double>& variables) override;
+  optional<double> evaluate(vector<double>& variables) override;
 
   string get_elem() override;
 
@@ -100,10 +101,9 @@ class OperatorNode : public TreeNode {
 
   /**
    * @brief Вычисляет результат операции
-   * @return Результат операции
-   * @throw std::runtime_error При ошибке вычисления
+   * @return Результат вычисления или nullopt, есди вычисление невозможно
    */
-  double evaluate(vector<double>& variables) override;
+  optional<double> evaluate(vector<double>& variables) override;
 
   string get_elem() override;
 

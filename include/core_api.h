@@ -12,23 +12,24 @@
 
 #include "dll_api.h"
 #include "expression_tree.h"
+#include "response_class.h"
 
-#ifdef NELDERMID_API
+#ifdef __cplusplus
 extern "C" {
 #endif
 
 /**
  * @brief Создает дерево выражений из строки
  * @param function_str Строка с математическим выражением в инфиксной записи.
- * Переменные в выражении должны быть представлены в формате "x{i}". i принимает
- * значения от 1 (например, "x1 + sin(x2)")
- * @return Указатель на созданное дерево выражений или nullptr при ошибке
+ * Переменные в выражении должны быть представлены в формате "xi". i принимает
+ * значения от 1 (например, "x1 * (x3 - x2)")
+ * @return Указатель объект Response, содержащий ссылка на созданныое дерево
  * @warning Строка должна содержать корректное математическое выражение
  * @warning После использования дерева нужно вызвать delete_tree для очистки
  * памяти. В ином случае память будет утеряна
  * @ingroup CoreAPI
  */
-NELDERMID_API ExpressionTree* create_tree(const char* function_str);
+NELDERMID_API Response<ExpressionTree*>* create_tree(const char* function_str);
 
 /**
  * @brief Очищает память выделенную под дерево выражения
@@ -59,12 +60,12 @@ NELDERMID_API int get_number_variable(ExpressionTree* trее);
  * @param num_variable Число передаваемых переменных в функцию
  * @param variables Указатель на массив переменных. Массив должен быть
  * отсортировон по номерам переменных. (например x1, x2, ..., xn)
- * @return Результат вычисления
+ * @return Ссылку на объект Response, содержащий результат вычислений
  * @ingroup CoreAPI
  */
-NELDERMID_API double evaluate_tree(ExpressionTree* trее,
-                                   const int number_variable,
-                                   const double* variables);
+NELDERMID_API Response<double>* evaluate_tree(ExpressionTree* trее,
+                                              const int number_variable,
+                                              const double* variables);
 
 /**
  * @brief Создает строку в формате JSON, содержащую дерево выражения из обьекта
