@@ -2970,7 +2970,11 @@ SHOW_GROUPED_MEMB_INC = YES
 
 PROJECT_NAME           = "Nelder-Mid Library"
 OUTPUT_DIRECTORY       = docs
-INPUT                  = include src docs/index.md
+INPUT                  = include src include_response src_response docs/index.md
+USE_MDFILE_AS_MAINPAGE = docs/index.md
+
+MARKDOWN_SUPPORT = YES
+EXTENSION_MAPPING = md=markdown
 
 RECURSIVE              = YES
 EXTRACT_ALL            = YES
@@ -2990,8 +2994,6 @@ PREDEFINED            = NELDERMID_API=
 
 USE_MATHJAX            = YES
 
-MAIN_PAGE = docs/index.md
-
 # Включить группировку
 GROUP_NESTED_COMPOUNDS = YES
 SUBGROUPING            = YES
@@ -2999,7 +3001,3 @@ SUBGROUPING            = YES
 # Создать отдельную страницу для групп
 SHOW_GROUPED_MEMB_INC = YES
 
-#GENERATE_LATEX         = YES
-#LATEX_OUTPUT           = latex
-#LATEX_CMD_NAME         = pdflatex
-#PDF_HYPERLINKS         = YES

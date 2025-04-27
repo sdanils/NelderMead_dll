@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.10)  
 project(NelderMead_DLL)
 
-file(GLOB SOURCES "src/*.cpp")
+file(GLOB SOURCES "src/*.cpp" "src_response/*.cpp")
 
-file(GLOB HEADERS "include/*.h")
+file(GLOB HEADERS "include/*.h" "include_response/*.h")
 
 # Загружаем nlohmann/json из GitHub
 include(FetchContent)
@@ -18,7 +18,7 @@ FetchContent_MakeAvailable(nlohmann_json)
 
 add_library(NelderMead SHARED ${SOURCES} ${HEADERS})
 
-target_include_directories(NelderMead PUBLIC include)
+target_include_directories(NelderMead PUBLIC include include_response)
 
 target_link_libraries(NelderMead PRIVATE nlohmann_json::nlohmann_json)
 

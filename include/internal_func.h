@@ -40,3 +40,5 @@ bool check_chars(const string& function_str);
  * @return String строка с выражением
  */
 string create_string(const char* function_str_c);
+
+char* string_to_c_type(string&);
