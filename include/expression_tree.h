@@ -1,19 +1,21 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
+#include "dll_api.h"
 #include "node_classes.h"
-#include "response_class.h"
 
 using std::string;
+using std::vector;
 
 /**
  * @class ExpressionTree
  * @brief Класс для представления и вычисления выражений
  * @details Содержит ссылку на корень дерева выражения и число переменных в
- * дереве.
+ * дереве. Так же методы для работы с выражение.
  */
-class ExpressionTree {
+class NELDERMID_API ExpressionTree {
  private:
   TreeNode* root;       ///< Корень дерева выражений
   int number_variable;  ///< Число переменных в дереве выражений
@@ -24,28 +26,34 @@ class ExpressionTree {
    * @param number_variable_ Число переменных в дереве
    */
   ExpressionTree(TreeNode* root_, int number_variable_);
-
- public:
   /**
    * @brief Деструктор дерева
    * @details Очищает память с узлами
    */
   ~ExpressionTree();
+
+ public:
   /**
    * @brief Фабричный метод создания обьекта дерева выражения
-   * @details Преобразует Вектор строк, который является постфиксной записью
-   * переданного выражения, в дерево выражения
-   * @param rpn_expression Вектор строк представляющий постфиксную запись
-   *выражения
+   * @details Преобразует строку выражения, в дерево выражения
+   * @param function_str Строка представляющаяя выражение
+   * @warning Выбрасывает исключение std::invalid_argument с сообщение
+   * описания ошибки
    * @return Ссылку на созданный обьект дерева
    **/
-  static ExpressionTree* create_tree(vector<string>& rpn_expression);
+  static ExpressionTree* create_tree(const string function_str);
   /**
-   * @brief Вычисляет значение выражения
-   * @return Объект Response
+   * @brief Вычисляет значение дерева выражений
+   * @details Функция принимает список переменных и вычисляет значение дерева
+   * использую переданные переменные. Выбросит исключение.
+   * @param num_variable Число передаваемых переменных в функцию
+   * @param variables Указатель на массив переменных. Массив должен быть
+   * отсортировон по номерам переменных. (например x1, x2, ..., xn)
+   * @warning Выбрасывает исключение std::invalid_argument с сообщение описания
+   * ошибки
+   * @return double значение вычислений, результат вычислений
    */
-  Response<double>* evaluate(const int number_variable,
-                             const double* variables);
+  double evaluate(const int number_variable, const vector<double>& variables);
   /**
    * @brief Проверяет число переменных
    * @details Проверяет переданное число на равенство хранящемуся числу
@@ -60,8 +68,8 @@ class ExpressionTree {
    */
   string json_tree();
   /**
-   * @brief Метод для полуения числа переменных в дереве
-   * @return Число переменных в дереве
+   * @brief Возвращает число переменных в переданном дереве выражения
+   * @return Число переменных
    */
   int get_number_variables();
 };

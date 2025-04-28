@@ -18,15 +18,9 @@ using std::vector;
 
 VariableNode::VariableNode(const string& name_) { name = name_; }
 
-optional<double> VariableNode::evaluate(vector<double>& variables) {
+optional<double> VariableNode::evaluate(const vector<double>& variables) {
   int num_variable = get_number_variable();
-
-  try {
-    double val = variables.at(num_variable - 1);
-    return val;
-  } catch (const std::out_of_range& e) {
-    return nullopt;
-  }
+  return variables[num_variable];
 }
 
 string VariableNode::get_elem() { return name; }
@@ -45,7 +39,7 @@ int VariableNode::get_number_variable() {
 
 NumberNode::NumberNode(const double& number_) { number = number_; }
 
-optional<double> NumberNode::evaluate(vector<double>& variables) {
+optional<double> NumberNode::evaluate(const vector<double>& variables) {
   return number;
 }
 
@@ -68,7 +62,7 @@ OperatorNode::~OperatorNode() {
   delete right_child;
 }
 
-optional<double> OperatorNode::evaluate(vector<double>& variables) {
+optional<double> OperatorNode::evaluate(const vector<double>& variables) {
   optional<double> left_val_opt = left_child->evaluate(variables);
   optional<double> right_val_opt = right_child->evaluate(variables);
   if (!left_val_opt.has_value() || !right_val_opt.has_value()) {

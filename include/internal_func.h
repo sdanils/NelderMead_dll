@@ -33,12 +33,3 @@ vector<string> infen_expr_to_rpn(const string& infenex_expr);
  * @return Результат проверки
  */
 bool check_chars(const string& function_str);
-
-/**
- * @brief Преобразует строку типа С в String
- * @param function_str_c Строка типа С с математическим выражением
- * @return String строка с выражением
- */
-string create_string(const char* function_str_c);
-
-char* string_to_c_type(string&);
