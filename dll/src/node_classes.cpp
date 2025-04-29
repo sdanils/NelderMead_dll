@@ -19,7 +19,7 @@ using std::vector;
 VariableNode::VariableNode(const string& name_) { name = name_; }
 
 optional<double> VariableNode::evaluate(const vector<double>& variables) {
-  int num_variable = get_number_variable();
+  int num_variable = get_number_variable() - 1;
   return variables[num_variable];
 }
 
@@ -81,7 +81,7 @@ optional<double> OperatorNode::evaluate(const vector<double>& variables) {
       return left_val * right_val;
     case '/':
       if (right_val == 0) {
-        return (double)ULLONG_MAX;
+        throw std::invalid_argument("division by zero.");
       }
       return left_val / right_val;
     case '^':
