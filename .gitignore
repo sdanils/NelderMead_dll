@@ -1,6 +1,7 @@
 .vscode/
+dll/build
+wrapper_cli/build
 build/
-
 docs/*
 !docs/
 !docs/index.md

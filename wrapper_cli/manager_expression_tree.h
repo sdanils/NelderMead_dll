@@ -2,7 +2,7 @@
 
 #include "expression_tree.h"
 
-namespace NealderMeadDll {
+namespace NelderMidDll {
 public
 ref class WExpressionTree {
  private:
@@ -15,5 +15,6 @@ ref class WExpressionTree {
                   System::Collections::Generic::List<double> ^ variables);
   bool CheckNumberVariables(int numberVariables);
   System::String ^ GetJsonTree();
+  int GetNumberVariables();
 };
-}  // namespace NealderMeadDll
+}  // namespace NelderMidDll
