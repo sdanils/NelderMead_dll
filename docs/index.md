@@ -28,12 +28,12 @@
    * brief Конструктор дерева.
    * param root_ Корень дерева
    * param number_variable_ Число переменных в дереве
-  
+
+### Открытые методы. (APi приложения библиотеки)
 ~ExpressionTree();
 
    * brief Деструктор дерева
    * details Очищает память с узлами
-### Открытые методы. (APi приложения библиотеки)
 static ExpressionTree* create_tree(const string function_str);
    * brief Фабричный метод создания обьекта дерева выражения
    * details Преобразует строку выражения, в дерево выражения

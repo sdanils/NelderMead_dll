@@ -5,27 +5,34 @@
 #include "expression_tree.h"
 
 NelderMidDll::WExpressionTree::WExpressionTree(System::String ^ functionStr) {
-  System::IntPtr ptr =
-      System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(
-          functionStr);
-  const char* native_str = static_cast<const char*>(ptr.ToPointer());
-  std::string function_str(native_str);
-  System::Runtime::InteropServices::Marshal::FreeHGlobal(ptr);
+  try {
+    System::IntPtr ptr =
+        System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(
+            functionStr);
+    const char* native_str = static_cast<const char*>(ptr.ToPointer());
+    std::string function_str(native_str);
+    System::Runtime::InteropServices::Marshal::FreeHGlobal(ptr);
 
-  expressionTree = ExpressionTree::create_tree(function_str);
+    expressionTree = ExpressionTree::create_tree(function_str);
+  } catch (const std::invalid_argument& e) {
+    throw gcnew System::ArgumentException(gcnew System::String(e.what()));
+  }
 }
 
 NelderMidDll::WExpressionTree::~WExpressionTree() { delete expressionTree; }
 
 double NelderMidDll::WExpressionTree::Evaluate(
-    int numberVariable,
     System::Collections::Generic::List<double> ^ variables) {
-  std::vector<double> native_variables;
-  for each (double val in variables) {
-    native_variables.push_back(val);
-  }
+  try {
+    std::vector<double> native_variables;
+    for each (double val in variables) {
+      native_variables.push_back(val);
+    }
 
-  return expressionTree->evaluate(numberVariable, native_variables);
+    return expressionTree->evaluate(native_variables);
+  } catch (const std::invalid_argument& e) {
+    throw gcnew System::ArgumentException(gcnew System::String(e.what()));
+  }
 }
 
 bool NelderMidDll::WExpressionTree::CheckNumberVariables(int numberVariables) {

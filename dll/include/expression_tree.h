@@ -53,7 +53,7 @@ class NELDERMID_API ExpressionTree {
    * ошибки
    * @return double значение вычислений, результат вычислений
    */
-  double evaluate(const int number_variable, const vector<double>& variables);
+  double evaluate(const vector<double>& variables);
   /**
    * @brief Проверяет число переменных
    * @details Проверяет переданное число на равенство хранящемуся числу

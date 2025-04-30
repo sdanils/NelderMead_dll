@@ -13,7 +13,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHsc")
 set(CMAKE_CXX_STANDARD 17) 
 
 file(GLOB SOURCES_lib "../dll/src/*.cpp" )
-file(GLOB HEADERS_lib "../dll/include/*.h") 
 
 include(FetchContent)
 FetchContent_Declare(
@@ -36,7 +35,6 @@ target_include_directories(NelderMid_cli PUBLIC "../dll/include" .)
 target_link_libraries(NelderMid_cli PRIVATE NelderMid_lib nlohmann_json::nlohmann_json)
 
 # Ключевые настройки для CLI:
-target_compile_options(NelderMid_cli PRIVATE /clr)
 set_target_properties(NelderMid_cli PROPERTIES
     COMMON_LANGUAGE_RUNTIME ""
     VS_DOTNET_TARGET_FRAMEWORK_VERSION "v4.8"
@@ -46,9 +44,6 @@ set_target_properties(NelderMid_cli PROPERTIES
 target_include_directories(NelderMid_cli PUBLIC "../dll/include"
                             "C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.8" #Здесь указать адрес на заголовки .Net
 )
-target_link_libraries(NelderMid_cli PRIVATE NelderMid_lib)
-
-target_compile_options(NelderMid_cli PRIVATE /clr)
 
 if(WIN32)
     target_compile_definitions(NelderMid_lib PRIVATE NELDERMID_EXPORTS)
