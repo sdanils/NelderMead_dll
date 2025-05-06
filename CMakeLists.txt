@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 file(GLOB SOURCES "src/*.cpp" )
 file(GLOB HEADERS "include/*.h") 
+file(GLOB WRAPPER "wrapper.cxx")
 
 # Загружаем nlohmann/json из GitHub
 include(FetchContent)
@@ -18,14 +19,16 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(nlohmann_json)
 
-add_library(NelderMid SHARED ${SOURCES} ${HEADERS})
+add_library(NelderMead SHARED ${SOURCES} ${HEADERS} ${WRAPPER})
 
 target_include_directories(NelderMid PUBLIC include)
 
 target_link_libraries(NelderMid PRIVATE nlohmann_json::nlohmann_json)
 
-# Для Windows: определяем макрос MYLIBRARY_EXPORTS
+# Для Windows
 if(WIN32)
-    target_compile_definitions(NelderMid PRIVATE NELDERMID_EXPORTS)
+    target_compile_definitions(NelderMead PRIVATE NELDERMID_EXPORTS)
+    target_compile_options(NelderMead PRIVATE /clr)
+    target_link_options(NelderMead PRIVATE /CLRIMAGETYPE:IJW)
+    set_target_properties(NelderMead PROPERTIES SUFFIX ".dll" PREFIX "")
 endif()
-

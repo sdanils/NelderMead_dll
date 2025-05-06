@@ -38,7 +38,7 @@ ExpressionTree* ExpressionTree::create_tree(const string function_str) {
   for (const string& token : rpn_expression) {
     if (Operators::is_operator(token)) {
       if (st.size() < 2) {
-        return nullptr;
+        throw std::invalid_argument("Invalid expression string");
       }
 
       TreeNode* right = st.top();
