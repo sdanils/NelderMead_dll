@@ -9,7 +9,6 @@
 
 #include "internal_func.h"
 #include "node_classes.h"
-#include "response_class.h"
 
 using nlohmann::json;
 using std::nullopt;
@@ -26,7 +25,12 @@ ExpressionTree::ExpressionTree(TreeNode* root_, int number_variable_) {
 
 ExpressionTree::~ExpressionTree() { delete root; }
 
-ExpressionTree* ExpressionTree::create_tree(vector<string>& rpn_expression) {
+ExpressionTree* ExpressionTree::create_tree(const string function_str) {
+  vector<string> rpn_expression = infen_expr_to_rpn(function_str);
+  if (rpn_expression.size() == 0) {
+    throw std::invalid_argument("Invalid expression string");
+  }
+
   stack<TreeNode*> st;
   int number_variables = 0;
   unordered_set<string> variables;
@@ -34,7 +38,7 @@ ExpressionTree* ExpressionTree::create_tree(vector<string>& rpn_expression) {
   for (const string& token : rpn_expression) {
     if (Operators::is_operator(token)) {
       if (st.size() < 2) {
-        return nullptr;
+        throw std::invalid_argument("Invalid expression string");
       }
 
       TreeNode* right = st.top();
@@ -58,26 +62,24 @@ ExpressionTree* ExpressionTree::create_tree(vector<string>& rpn_expression) {
   }
 
   if (st.size() != 1) {
-    return nullptr;
+    throw std::invalid_argument("Invalid expression string");
   }
 
   ExpressionTree* tree = new ExpressionTree(st.top(), number_variables);
   return tree;
 }
 
-Response<double>* ExpressionTree::evaluate(const int number_variable,
-                                           const double* variables) {
-  vector<double> vector_variables =
-      vector<double>(variables, variables + number_variable);
+double ExpressionTree::evaluate(const vector<double>& variables) {
+  if (variables.size() != number_variable) {
+    throw std::invalid_argument("The number of variables is incorrect");
+  }
 
-  if (root != nullptr) {
-    optional<double> result_opt = root->evaluate(vector_variables);
-    if (!result_opt.has_value()) {
-      return new Response<double>(0.0, "error: Calculation error");
-    };
-    return new Response<double>(result_opt.value(), "OK");
+  optional<double> result = root->evaluate(variables);
+
+  if (result != nullopt) {
+    return result.value();
   } else {
-    return new Response<double>(0.0, "error: There is no tree root");
+    throw std::invalid_argument("Cannot evaluate expression");
   }
 }
 
