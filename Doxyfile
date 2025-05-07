@@ -2970,7 +2970,7 @@ SHOW_GROUPED_MEMB_INC = YES
 
 PROJECT_NAME           = "Nelder-Mid Library"
 OUTPUT_DIRECTORY       = docs
-INPUT                  = include src docs/index.md
+INPUT                  = dll/include dll/src docs/index.md
 USE_MDFILE_AS_MAINPAGE = docs/index.md
 
 MARKDOWN_SUPPORT = YES

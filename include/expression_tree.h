@@ -26,13 +26,13 @@ class NELDERMID_API ExpressionTree {
    * @param number_variable_ Число переменных в дереве
    */
   ExpressionTree(TreeNode* root_, int number_variable_);
+
+ public:
   /**
    * @brief Деструктор дерева
    * @details Очищает память с узлами
    */
   ~ExpressionTree();
-
- public:
   /**
    * @brief Фабричный метод создания обьекта дерева выражения
    * @details Преобразует строку выражения, в дерево выражения
@@ -53,7 +53,7 @@ class NELDERMID_API ExpressionTree {
    * ошибки
    * @return double значение вычислений, результат вычислений
    */
-  double evaluate(const int number_variable, const vector<double>& variables);
+  double evaluate(const vector<double>& variables);
   /**
    * @brief Проверяет число переменных
    * @details Проверяет переданное число на равенство хранящемуся числу
