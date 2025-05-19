@@ -25,10 +25,23 @@ target_include_directories(NelderMead PUBLIC include)
 
 target_link_libraries(NelderMead PRIVATE nlohmann_json::nlohmann_json)
 
-# Для Windows
 if(WIN32)
-    target_compile_definitions(NelderMead PRIVATE NELDERMID_EXPORTS)
-    target_compile_options(NelderMead PRIVATE /clr)
-    target_link_options(NelderMead PRIVATE /CLRIMAGETYPE:IJW)
+    target_compile_definitions(NelderMead PRIVATE NELDERMEAD_EXPORTS)
     set_target_properties(NelderMead PROPERTIES SUFFIX ".dll" PREFIX "")
 endif()
+
+# Сборка совместно с main приложением, для теста внутри библиотеки.
+
+#add_executable(main src/main.cpp)
+#target_link_libraries(main PRIVATE NelderMead)
+#target_include_directories(main PRIVATE include
+#"${CMAKE_CURRENT_SOURCE_DIR}/build/_deps/nlohmann_json-src/include"    )
+    
+#if(WIN32)
+#    set_target_properties(main PROPERTIES SUFFIX ".exe")
+#    add_custom_command(TARGET main POST_BUILD
+#        COMMAND ${CMAKE_COMMAND} -E copy
+#            $<TARGET_FILE:NelderMead>
+#            $<TARGET_FILE_DIR:main>
+#    )
+#endif()
