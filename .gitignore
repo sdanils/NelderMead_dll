@@ -8,3 +8,5 @@ docs/*
 !docs/uml.png
 
 wrapper.*
+
+src/main.cpp
