@@ -69,8 +69,8 @@ ExpressionTree* ExpressionTree::create_tree(const string function_str) {
   return tree;
 }
 
-double ExpressionTree::evaluate(const vector<double>& variables) {
-  if (variables.size() != number_variable) {
+double ExpressionTree::evaluate(const Point* variables) const {
+  if (variables->dimensions() != number_variable) {
     throw std::invalid_argument("The number of variables is incorrect");
   }
 

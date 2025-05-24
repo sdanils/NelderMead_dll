@@ -8,37 +8,9 @@
 using std::string;
 using std::vector;
 
-void NelderMeadMethod::sort_simplex() {
-  sort(simplex.begin(), simplex.end(),
-       [this](const vector<double>& a, const vector<double>& b) {
-         return expression_tree->evaluate(a) < expression_tree->evaluate(b);
-       });
-}
-
-vector<double> NelderMeadMethod::centroid(int exclude_index) {
-  int dimension = simplex[0].size();
-  vector<double> center(dimension, 0.0);
-  int count = 0;
-
-  for (int i = 0; i < simplex.size(); ++i) {
-    if (i != exclude_index) {
-      for (int j = 0; j < dimension; ++j) {
-        center[j] += simplex[i][j];
-      }
-      count++;
-    }
-  }
-
-  for (double& val : center) {
-    val /= count;
-  }
-
-  return center;
-}
-
 bool NelderMeadMethod::check_convergence() {
-  size_t dimension = simplex[0].size();
-  size_t m = simplex.size();
+  size_t dimension = simplex->dimension();
+  size_t m = simplex->vertex_count();
 
   for (size_t coord = 0; coord < dimension; ++coord) {
     double mean = 0.0;

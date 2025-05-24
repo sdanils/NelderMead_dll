@@ -4,6 +4,7 @@
 
 #include "dll_api.h"
 #include "expression_tree.h"
+#include "simplex.h"
 
 using std::vector;
 
@@ -22,7 +23,7 @@ class NELDERMID_API NelderMeadMethod {
   double homothety;   ///< Коэффициент гомотетии (глобальное сжатие)
   double dispersion;  ///< Значение дисперсии, для условия остановки
 
-  vector<vector<double>> simplex;  ///< Текущий симплекс
+  Simplex* simplex;  ///< Текущий симплекс
 
   /**
    * @brief Метод для сортировки вершин симплекса по увеличению значения функции
@@ -88,6 +89,7 @@ class NELDERMID_API NelderMeadMethod {
    * ошибки, если симплекс имеет некорректную размерность
    */
   void set_simplex(const vector<vector<double>>& simplex_);
+
   /**
    * @brief Выполняет поиск симплекса, в котором находится локальный минимум.
    * @details Выполняет поиск, сохраняя промежуточные симплексы. В случае
@@ -95,5 +97,5 @@ class NELDERMID_API NelderMeadMethod {
    * @param number_steps Максимальное число шагов алгоритма
    * @return Вектор промежуточных симплексов
    */
-  vector<vector<vector<double>>> minimum_search(int number_steps = 10000);
+  vector<Simplex*> minimum_search(int number_steps = 10000);
 };

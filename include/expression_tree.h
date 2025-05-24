@@ -5,6 +5,7 @@
 
 #include "dll_api.h"
 #include "node_classes.h"
+#include "point.h"
 
 using std::string;
 using std::vector;
@@ -52,7 +53,7 @@ class NELDERMID_API ExpressionTree {
    * ошибки
    * @return double значение вычислений, результат вычислений
    */
-  double evaluate(const vector<double>& variables);
+  double evaluate(const Point* variables) const;
   /**
    * @brief Проверяет число переменных
    * @details Проверяет переданное число на равенство хранящемуся числу
