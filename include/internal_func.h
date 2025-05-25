@@ -4,8 +4,6 @@
 #include <string>
 #include <vector>
 
-#include "expression_tree.h"
-
 using std::map;
 using std::string;
 using std::vector;

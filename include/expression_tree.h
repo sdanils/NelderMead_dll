@@ -4,6 +4,7 @@
 #include <vector>
 
 #include "dll_api.h"
+#include "ifunction.h"
 #include "node_classes.h"
 #include "point.h"
 
@@ -16,7 +17,7 @@ using std::vector;
  * @details Содержит ссылку на корень дерева выражения и число переменных в
  * дереве. Так же методы для работы с выражение.
  */
-class NELDERMID_API ExpressionTree {
+class NELDERMID_API ExpressionTree : public IFunction {
  private:
   TreeNode* root;       ///< Корень дерева выражений
   int number_variable;  ///< Число переменных в дереве выражений
@@ -53,7 +54,7 @@ class NELDERMID_API ExpressionTree {
    * ошибки
    * @return double значение вычислений, результат вычислений
    */
-  double evaluate(const Point* variables) const;
+  double evaluate(const Point* variables) const override;
   /**
    * @brief Проверяет число переменных
    * @details Проверяет переданное число на равенство хранящемуся числу
@@ -61,7 +62,7 @@ class NELDERMID_API ExpressionTree {
    * @param number_variables Предпологаемое число переменных
    * @return Результат проверки
    */
-  bool check_number_variables(int number_variables);
+  bool check_number_variables(int number_variables) override;
   /**
    * @brief Создаёт строку представляющую дерево в формате JSON
    * @return Строка с деревом в формате JSON
@@ -71,5 +72,5 @@ class NELDERMID_API ExpressionTree {
    * @brief Возвращает число переменных в переданном дереве выражения
    * @return Число переменных
    */
-  int get_number_variables();
+  int get_number_variables() override;
 };
