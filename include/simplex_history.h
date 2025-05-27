@@ -15,8 +15,7 @@ using std::vector;
  * структурированных данных.
  */
 class NELDERMID_API SimplexHistory {
-  
- private:
+  private:
   vector<Simplex*> history;  ///< Вектор для хранения состояний симплекса
 
  public:

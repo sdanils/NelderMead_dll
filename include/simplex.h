@@ -1,8 +1,9 @@
 #pragma once
 
+#include <algorithm>
+#include <cstddef>
 #include <stdexcept>
 #include <vector>
-#include <algorithm>
 
 #include "dll_api.h"
 #include "ifunction.h"
@@ -21,7 +22,6 @@ using std::vector;
  * освобождение.
  */
 class NELDERMID_API Simplex {
-  
  private:
   /**
    * @brief Вектор вершин симплекса

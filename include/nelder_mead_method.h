@@ -54,8 +54,8 @@ class NELDERMID_API NelderMeadMethod {
    * @param homothety_ Коэффициент гомотетии (глобальное сжатие)
    * @param dispersion_ ///< Значение дисперсии, для условия остановки
    */
-  NelderMeadMethod(IFunction* function_, double reflection_ = 1,
-                   double expansion_ = 2, double contraction_ = 0.5,
+  NelderMeadMethod(IFunction* function_, double reflection_ = 1.0,
+                   double expansion_ = 2.0, double contraction_ = 0.5,
                    double homothety_ = 0.5, double dispersion_ = 0.0001);
 
   /**

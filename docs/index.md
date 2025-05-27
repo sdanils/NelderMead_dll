@@ -41,20 +41,42 @@
 
 # Пример на С++ 
 ```
-int main() {
-  ExpressionTree* tree = ExpressionTree::create_tree("x1^2+x2^2+4-x1");
+  ExpressionTree* tree = ExpressionTree::create_tree("x1^2+x2^2");
   std::cout << tree->json_tree();
   std::vector<double> p = {1, 4};
   Point* point = Point::create_point(p, 2);
-  std::cout << tree->evaluate(point);
+  std::cout << tree->evaluate();
 
-  NelderMeadMethod nel = NelderMeadMethod(tree);
-  SimplexHistory* histor = nel.minimum_search(20);
+  std::vector<Point*> simplex;
+  for (int i = 0; i < 3; i++) {
+    std::vector<double> g = {1.0 + i, 2.0 - i * i};
+    Point* new_point = Point::create_point(g, 2);
+    simplex.push_back(new_point);
+  }
+
+  Simplex* sim = Simplex::create_simplex(simplex);
+
+  NelderMeadMethod nel = NelderMeadMethod(tree, 1.0, 2.0, 0.5, 0.5, 1.0E-10);
+  nel.set_simplex(sim);
+
+  SimplexHistory* histor = nel.minimum_search();
   vector<vector<vector<double>>> his = histor->get_vector_history();
+  for (auto v1 : his) {
+    std::cout << "Simplex: ";
+    for (auto v2 : v1) {
+      std::cout << "vector: ";
+      for (double d : v2) {
+        std::cout << d;
+        std::cout << " ";
+      }
+    }
+    std::cout << "\n";
+  }
 
   delete histor;
   delete point;
+  delete sim;
+  delete tree;
 
   return 0;
-}
 ``` 

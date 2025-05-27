@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstddef>
 #include <vector>
 
 #include "dll_api.h"
@@ -13,7 +14,7 @@ using std::vector;
  * Предоставляет методы для создания, доступа, модификации и клонирования точек.
  */
 class NELDERMID_API Point {
-  private:
+ private:
   /**
    * @brief Вектор, хранящий координаты точки
    * @details Каждый элемент вектора соответствует координате в N-мерном

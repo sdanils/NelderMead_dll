@@ -70,7 +70,10 @@ ExpressionTree* ExpressionTree::create_tree(const string function_str) {
 }
 
 double ExpressionTree::evaluate(const Point* variables) const {
-  if (variables->dimensions() != number_variable) {
+  if (variables == nullptr && number_variable != 0) {
+    throw std::invalid_argument("Uncorrect point");
+  }
+  if (variables != nullptr && variables->dimensions() != number_variable) {
     throw std::invalid_argument("The number of variables is incorrect");
   }
 

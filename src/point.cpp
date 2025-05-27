@@ -1,5 +1,6 @@
 #include "point.h"
 
+#include <cstddef>
 #include <stdexcept>
 #include <vector>
 

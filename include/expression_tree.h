@@ -54,7 +54,7 @@ class NELDERMID_API ExpressionTree : public IFunction {
    * ошибки
    * @return double значение вычислений, результат вычислений
    */
-  double evaluate(const Point* variables) const override;
+  double evaluate(const Point* variables = nullptr) const override;
   /**
    * @brief Проверяет число переменных
    * @details Проверяет переданное число на равенство хранящемуся числу

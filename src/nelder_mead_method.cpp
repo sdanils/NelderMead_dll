@@ -1,5 +1,6 @@
 #include "nelder_mead_method.h"
 
+#include <cstddef>
 #include <string>
 #include <vector>
 
@@ -70,13 +71,15 @@ bool NelderMeadMethod::step() {
     }
 
     double f_expanded = function->evaluate(x_expanded);
-    if (f_reflected > f_expanded) {
-      simplex->set_vertex(x_expanded, dimension);
+    if (f_best > f_expanded) {
+      simplex->set_vertex(x_expanded->clone(), dimension);
     } else {
-      simplex->set_vertex(x_reflected, dimension);
+      simplex->set_vertex(x_reflected->clone(), dimension);
     }
+
+    delete x_expanded;
   } else if (f_reflected < f_second_worst) {
-    simplex->set_vertex(x_reflected, dimension);
+    simplex->set_vertex(x_reflected->clone(), dimension);
   } else {
     Point* x_contracted = Point::create_point({}, dimension);
     double f_worst = function->evaluate(x_worst);
@@ -87,6 +90,7 @@ bool NelderMeadMethod::step() {
             contraction * (x_reflected->get(i) - x_centroid->get(i));
         x_contracted->set(new_mean, i);
       }
+      f_worst = f_reflected;
     } else {
       for (int i = 0; i < dimension; i++) {
         double new_mean = x_centroid->get(i) +
@@ -97,7 +101,7 @@ bool NelderMeadMethod::step() {
 
     double f_contracted = function->evaluate(x_contracted);
     if (f_worst > f_contracted) {
-      simplex->set_vertex(x_contracted, dimension);
+      simplex->set_vertex(x_contracted->clone(), dimension);
     } else {
       Point* x_best = simplex->get_vertex(0);
       for (int i = 1; i < dimension + 1; i++) {
@@ -109,15 +113,19 @@ bool NelderMeadMethod::step() {
         }
       }
     }
+
+    delete x_contracted;
   }
+
+  delete x_centroid;
+  delete x_reflected;
 
   return false;
 }
 
-NelderMeadMethod::NelderMeadMethod(IFunction* function_,
-                                   double reflection_, double expansion_,
-                                   double contraction_, double homothety_,
-                                   double dispersion_) {
+NelderMeadMethod::NelderMeadMethod(IFunction* function_, double reflection_,
+                                   double expansion_, double contraction_,
+                                   double homothety_, double dispersion_) {
   if (reflection_ <= 0 || expansion_ <= 1) {
     throw std::invalid_argument("Reflection or Expansion have invalid values");
   }
@@ -141,8 +149,11 @@ NelderMeadMethod::NelderMeadMethod(IFunction* function_,
 void NelderMeadMethod::set_simplex(const Simplex* new_simplex) {
   int dimension = function->get_number_variables();
 
-  if (new_simplex->dimension() != dimension + 1) {
-    throw std::invalid_argument("Uncorrect vector apex");
+  if (new_simplex->vertex_count() != dimension + 1) {
+    throw std::invalid_argument("Uncorrect length vector apex");
+  }
+  if (new_simplex->dimension() != dimension) {
+    throw std::invalid_argument("Uncorrect dimension vector apex");
   }
 
   simplex = new_simplex->clone();

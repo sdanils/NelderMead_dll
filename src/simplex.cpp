@@ -1,5 +1,7 @@
 #include "simplex.h"
 
+#include <cstddef>
+
 #include "ifunction.h"
 
 Simplex* Simplex::create_simplex(const vector<Point*>& coords_list) {
@@ -61,7 +63,7 @@ Point* Simplex::centroid(int exclude_index) {
   Point* center = Point::create_point({}, dimension);
   int count = 0;
 
-  for (int i = 0; i < dimension + 1; ++i) {
+  for (int i = 0; i < vertices.size(); ++i) {
     if (i != exclude_index) {
       for (int j = 0; j < dimension; ++j) {
         double new_mean = center->get(j) + vertices[i]->get(j);

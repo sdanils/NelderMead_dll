@@ -22,27 +22,25 @@ string delete_spaces(const string& expr_with_space) {
   return expr;
 }
 
-int count_end_unary_minuse(const string& expr, size_t start){
+int count_end_unary_minuse(const string& expr, size_t start) {
   int end = start;
-  if(expr[start] == '('){
+  if (expr[start] == '(') {
     int open_braket = 1;
     end++;
 
-    while(open_braket != 0 && end < expr.size()){
-      if(expr[end] == '('){
+    while (open_braket != 0 && end < expr.size()) {
+      if (expr[end] == '(') {
         open_braket++;
-      }
-      else if(expr[end] == ')'){
+      } else if (expr[end] == ')') {
         open_braket--;
       }
       end++;
     }
-  /* if(open_braket != 0){
-      throw std::invalid_argument("Invalid expression string");
-  }*/  
-  }
-  else{
-    while(!Operators::is_operator(expr[end]) && end < expr.size()){
+    /* if(open_braket != 0){
+        throw std::invalid_argument("Invalid expression string");
+    }*/
+  } else {
+    while (!Operators::is_operator(expr[end]) && end < expr.size()) {
       end++;
     }
   }
@@ -55,12 +53,12 @@ std::pair<string, size_t> process_unary_minus(const string& expr, size_t start,
   string result;
   while (start < end) {
     char c = expr[start];
-    
+
     if (c == '-' && (start == 0 || expr[start - 1] == '(' ||
                      Operators::is_operator(expr[start - 1]))) {
       result += "(0-";
       start++;
-      
+
       int current_end = count_end_unary_minuse(expr, start);
       auto [sub_expr, new_pos] = process_unary_minus(expr, start, current_end);
       result += sub_expr;
@@ -68,7 +66,7 @@ std::pair<string, size_t> process_unary_minus(const string& expr, size_t start,
 
       result += ")";
       continue;
-    } 
+    }
 
     result += c;
     start++;
