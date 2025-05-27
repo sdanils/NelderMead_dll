@@ -9,6 +9,7 @@
 #include <vector>
 
 #include "expression_tree.h"
+#include "ipoint.h"
 
 using nlohmann::json;
 using std::nullopt;
@@ -18,7 +19,7 @@ using std::vector;
 
 VariableNode::VariableNode(const string& name_) { name = name_; }
 
-optional<double> VariableNode::evaluate(const Point* variables) {
+optional<double> VariableNode::evaluate(const IPoint* variables) {
   int num_variable = get_number_variable() - 1;
   return variables->get(num_variable);
 }
@@ -39,7 +40,9 @@ int VariableNode::get_number_variable() {
 
 NumberNode::NumberNode(const double& number_) { number = number_; }
 
-optional<double> NumberNode::evaluate(const Point* variables) { return number; }
+optional<double> NumberNode::evaluate(const IPoint* variables) {
+  return number;
+}
 
 string NumberNode::get_elem() { return std::to_string(number); }
 
@@ -60,7 +63,7 @@ OperatorNode::~OperatorNode() {
   delete right_child;
 }
 
-optional<double> OperatorNode::evaluate(const Point* variables) {
+optional<double> OperatorNode::evaluate(const IPoint* variables) {
   optional<double> left_val_opt = left_child->evaluate(variables);
   optional<double> right_val_opt = right_child->evaluate(variables);
   if (!left_val_opt.has_value() || !right_val_opt.has_value()) {

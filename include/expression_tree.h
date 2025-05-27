@@ -5,8 +5,8 @@
 
 #include "dll_api.h"
 #include "ifunction.h"
+#include "ipoint.h"
 #include "node_classes.h"
-#include "point.h"
 
 using std::string;
 using std::vector;
@@ -48,21 +48,13 @@ class NELDERMID_API ExpressionTree : public IFunction {
    * @brief Вычисляет значение дерева выражений
    * @details Функция принимает список переменных и вычисляет значение дерева
    * использую переданные переменные. Выбросит исключение.
-   * @param variables Указатель на массив переменных. Массив должен быть
+   * @param variables Указатель обьект, представляющий вектор перемнных
    * отсортировон по номерам переменных. (например x1, x2, ..., xn)
    * @warning Выбрасывает исключение std::invalid_argument с сообщение описания
    * ошибки
    * @return double значение вычислений, результат вычислений
    */
-  double evaluate(const Point* variables = nullptr) const override;
-  /**
-   * @brief Проверяет число переменных
-   * @details Проверяет переданное число на равенство хранящемуся числу
-   * переменных в дереве
-   * @param number_variables Предпологаемое число переменных
-   * @return Результат проверки
-   */
-  bool check_number_variables(int number_variables) override;
+  double evaluate(const IPoint* variables = nullptr) const override;
   /**
    * @brief Создаёт строку представляющую дерево в формате JSON
    * @return Строка с деревом в формате JSON

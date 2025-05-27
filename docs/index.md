@@ -44,31 +44,31 @@
   ExpressionTree* tree = ExpressionTree::create_tree("x1^2+x2^2");
   std::cout << tree->json_tree();
   std::vector<double> p = {1, 4};
-  Point* point = Point::create_point(p, 2);
-  std::cout << tree->evaluate();
+  IPoint* point = IPoint::create_point(p, (size_t)2);
+  std::cout << "\nRes: " << tree->evaluate(point) << "\n";
 
-  std::vector<Point*> simplex;
+  std::vector<IPoint*> simplex;
   for (int i = 0; i < 3; i++) {
     std::vector<double> g = {1.0 + i, 2.0 - i * i};
-    Point* new_point = Point::create_point(g, 2);
+    IPoint* new_point = IPoint::create_point(g, 2);
     simplex.push_back(new_point);
   }
 
   Simplex* sim = Simplex::create_simplex(simplex);
 
   NelderMeadMethod nel = NelderMeadMethod(tree, 1.0, 2.0, 0.5, 0.5, 1.0E-10);
-  nel.set_simplex(sim);
+  //nel.set_simplex(sim);
 
   SimplexHistory* histor = nel.minimum_search();
-  vector<vector<vector<double>>> his = histor->get_vector_history();
-  for (auto v1 : his) {
-    std::cout << "Simplex: ";
-    for (auto v2 : v1) {
-      std::cout << "vector: ";
-      for (double d : v2) {
-        std::cout << d;
-        std::cout << " ";
+  vector<Simplex*> his = histor->get_vector_history();
+
+  int dem = sim->get_vertex(0)->dimensions();
+  for (auto sim : his) {
+    for (int i = 0; i < dem + 1; i++) {
+      for (int j = 0; j < dem; j++) {
+        std::cout << sim->get_vertex(i)->get(j) << " ";
       }
+      std::cout << " || ";
     }
     std::cout << "\n";
   }

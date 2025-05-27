@@ -4,6 +4,7 @@
 #include <vector>
 
 #include "dll_api.h"
+#include "ipoint.h"
 
 using std::vector;
 
@@ -13,7 +14,7 @@ using std::vector;
  * @details Хранит координаты точки в виде вектора чисел с плавающей запятой.
  * Предоставляет методы для создания, доступа, модификации и клонирования точек.
  */
-class NELDERMID_API Point {
+class NELDERMID_API Point : IPoint {
  private:
   /**
    * @brief Вектор, хранящий координаты точки
@@ -21,27 +22,13 @@ class NELDERMID_API Point {
    * пространстве. Размер вектора определяет размерность точки.
    */
   std::vector<double> coordinates;  ///< Координаты точки
-  /**
-   * @brief Приватный конструктор точки
-   * @param coords Вектор координат для инициализации
-   * @details Явный конструктор, предотвращающий неявные преобразования.
-   *          Используется только внутри класса (в factory-методе create_point).
-   */
-  explicit Point(const std::vector<double>& coords) : coordinates(coords) {}
 
  public:
   /**
-   * @brief Фабричный метод для создания новой точки
-   * @param coords Вектор координат (если пустой - инициализируется нулями)
-   * @param N Ожидаемая размерность точки
-   * @throw std::invalid_argument Если:
-   *        - N == 0 (точка должна иметь хотя бы 1 измерение)
-   *        - coords не пуст, но coords.size() != N
-   * @return Указатель на созданную точку (выделяется в куче)
-   * @note Если coords пуст, все координаты инициализируются 0.0
-   * @warning Вызывающая сторона отвечает за освобождение памяти
+   * @brief Публичный конструктор точки
+   * @param coords Вектор координат для инициализации
    */
-  static Point* create_point(const std::vector<double>& coords, size_t N);
+  explicit Point(const std::vector<double>& coords) : coordinates(coords) {}
   /**
    * @brief Получает значение координаты по индексу
    * @param index Индекс координаты (начиная с 0)

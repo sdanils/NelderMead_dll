@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "expression_tree.h"
+#include "ipoint.h"
 #include "simplex_history.h"
 
 using std::string;
@@ -17,14 +18,14 @@ bool NelderMeadMethod::check_convergence() {
   for (size_t coord = 0; coord < dimension; ++coord) {
     double mean = 0.0;
     for (size_t i = 0; i < m; i++) {
-      const Point* vertex = simplex->get_vertex(i);
+      const IPoint* vertex = simplex->get_vertex(i);
       mean += vertex->get(coord);
     }
     mean /= m;
 
     double variance = 0.0;
     for (size_t i = 0; i < m; i++) {
-      const Point* vertex = simplex->get_vertex(i);
+      const IPoint* vertex = simplex->get_vertex(i);
       double diff = vertex->get(coord) - mean;
       variance += diff * diff;
     }
@@ -47,10 +48,10 @@ bool NelderMeadMethod::step() {
   if (dimension != simplex->dimension()) {
     throw std::invalid_argument("Uncorrect data NelderMead");
   }
-  const Point* x_worst = simplex->get_vertex(dimension);
-  Point* x_centroid = simplex->centroid(dimension);
+  const IPoint* x_worst = simplex->get_vertex(dimension);
+  IPoint* x_centroid = simplex->centroid(dimension);
 
-  Point* x_reflected = Point::create_point({}, dimension);
+  IPoint* x_reflected = IPoint::create_point({}, dimension);
   for (int i = 0; i < dimension; i++) {
     double new_mean = x_centroid->get(i) +
                       reflection * (x_centroid->get(i) - x_worst->get(i));
@@ -63,7 +64,7 @@ bool NelderMeadMethod::step() {
       function->evaluate(simplex->get_vertex(dimension - 1));
 
   if (f_best > f_reflected) {
-    Point* x_expanded = Point::create_point({}, dimension);
+    IPoint* x_expanded = IPoint::create_point({}, dimension);
     for (int i = 0; i < dimension; i++) {
       double new_mean = x_centroid->get(i) +
                         expansion * (x_reflected->get(i) - x_centroid->get(i));
@@ -81,7 +82,7 @@ bool NelderMeadMethod::step() {
   } else if (f_reflected < f_second_worst) {
     simplex->set_vertex(x_reflected->clone(), dimension);
   } else {
-    Point* x_contracted = Point::create_point({}, dimension);
+    IPoint* x_contracted = IPoint::create_point({}, dimension);
     double f_worst = function->evaluate(x_worst);
     if (f_worst > f_reflected) {
       for (int i = 0; i < dimension; i++) {
@@ -103,7 +104,7 @@ bool NelderMeadMethod::step() {
     if (f_worst > f_contracted) {
       simplex->set_vertex(x_contracted->clone(), dimension);
     } else {
-      Point* x_best = simplex->get_vertex(0);
+      IPoint* x_best = simplex->get_vertex(0);
       for (int i = 1; i < dimension + 1; i++) {
         for (int j = 0; j < dimension; j++) {
           double new_mean =

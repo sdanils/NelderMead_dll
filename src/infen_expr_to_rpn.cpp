@@ -36,9 +36,6 @@ int count_end_unary_minuse(const string& expr, size_t start) {
       }
       end++;
     }
-    /* if(open_braket != 0){
-        throw std::invalid_argument("Invalid expression string");
-    }*/
   } else {
     while (!Operators::is_operator(expr[end]) && end < expr.size()) {
       end++;

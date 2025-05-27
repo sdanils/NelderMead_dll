@@ -8,6 +8,7 @@
 #include <vector>
 
 #include "internal_func.h"
+#include "ipoint.h"
 #include "node_classes.h"
 
 using nlohmann::json;
@@ -69,7 +70,7 @@ ExpressionTree* ExpressionTree::create_tree(const string function_str) {
   return tree;
 }
 
-double ExpressionTree::evaluate(const Point* variables) const {
+double ExpressionTree::evaluate(const IPoint* variables) const {
   if (variables == nullptr && number_variable != 0) {
     throw std::invalid_argument("Uncorrect point");
   }
@@ -85,14 +86,6 @@ double ExpressionTree::evaluate(const Point* variables) const {
     throw std::invalid_argument("Cannot evaluate expression");
   }
 }
-
-bool ExpressionTree::check_number_variables(int number_variables_) {
-  if (number_variable == number_variables_) {
-    return true;
-  } else {
-    return false;
-  }
-};
 
 string ExpressionTree::json_tree() {
   string json_str = root->to_json().dump();

@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-#include "point.h"
+#include "ipoint.h"
 
 using nlohmann::json;
 using std::optional;
@@ -24,7 +24,7 @@ class TreeNode {
    * @param variables Вектор значений переменных
    * @return Результат вычисления или nullopt, если вычисление невозможно
    */
-  virtual optional<double> evaluate(const Point* variables) = 0;
+  virtual optional<double> evaluate(const IPoint* variables) = 0;
   /**
    * @brief Возвращает строку предстовялющую значение переменной
    * @return Строка результат
@@ -50,7 +50,7 @@ class VariableNode : public TreeNode {
    * @brief Возвращает значение переменной
    * @return Результат вычисления или nullopt, есди вычисление невозможно
    */
-  optional<double> evaluate(const Point* variables) override;
+  optional<double> evaluate(const IPoint* variables) override;
   /**
    * @brief Возвращает номер переменной
    * @details Возвращает номер переменно в типе int. Нужен для получения
@@ -80,7 +80,7 @@ class NumberNode : public TreeNode {
    * @param number Строковое представление числа
    * @return Результат вычисления или nullopt, есди вычисление невозможно
    */
-  optional<double> evaluate(const Point* variables) override;
+  optional<double> evaluate(const IPoint* variables) override;
 
   string get_elem() override;
 
@@ -105,7 +105,7 @@ class OperatorNode : public TreeNode {
    * @brief Вычисляет результат операции
    * @return Результат вычисления или nullopt, если вычисление невозможно
    */
-  optional<double> evaluate(const Point* variables) override;
+  optional<double> evaluate(const IPoint* variables) override;
 
   string get_elem() override;
 

@@ -7,7 +7,7 @@
 
 #include "dll_api.h"
 #include "ifunction.h"
-#include "point.h"
+#include "ipoint.h"
 
 using std::vector;
 
@@ -29,13 +29,13 @@ class NELDERMID_API Simplex {
    *          Размер вектора должен быть равен (dimension + 1) для N-мерного
    * пространства.
    */
-  vector<Point*> vertices;
+  vector<IPoint*> vertices;
   /**
    * @brief Приватный конструктор перемещения
    * @param points Вектор точек для инициализации (передается по rvalue-ссылке)
    * @note Принимает владение переданными точками
    */
-  explicit Simplex(vector<Point*>&& points) : vertices(std::move(points)) {}
+  explicit Simplex(vector<IPoint*>&& points) : vertices(std::move(points)) {}
 
  public:
   /**
@@ -48,7 +48,7 @@ class NELDERMID_API Simplex {
    * @return Указатель на новый симплекс
    * @warning Принимает владение переданными точками
    */
-  static Simplex* create_simplex(const vector<Point*>& coords_list);
+  static Simplex* create_simplex(const vector<IPoint*>& coords_list);
   /**
    * @brief Генерирует симплекс в окрестности точки x0
    * @details генерирует симплекс с вершиной в x0. В случае пустого вектора,
@@ -59,7 +59,7 @@ class NELDERMID_API Simplex {
    * ошибки, если вектор принадлежит некорректному пространству
    */
   static Simplex* create_simplex(double step, size_t dimension,
-                                 const Point* x0 = nullptr);
+                                 const IPoint* x0 = nullptr);
   /**
    * @brief Сортирует вершины по возрастанию значения функции
    * @param function Указатель на целевую функцию для оценки вершин
@@ -71,14 +71,14 @@ class NELDERMID_API Simplex {
    * @return Указатель на новую точку - центр тяжести
    * @note Вызывающая сторона отвечает за удаление возвращаемой точки
    */
-  Point* centroid(int exclude_index);
+  IPoint* centroid(int exclude_index);
   /**
    * @brief Получает вершину по индексу
    * @param index Индекс вершины (0 <= index < vertex_count())
    * @throw std::out_of_range При некорректном индексе
    * @return Указатель на вершину (не копия!)
    */
-  Point* get_vertex(size_t index) const;
+  IPoint* get_vertex(size_t index) const;
   /**
    * @brief Заменяет вершину симплекса
    * @param vertex Новая вершина
@@ -86,7 +86,7 @@ class NELDERMID_API Simplex {
    * @throw std::invalid_argument При некорректном индексе
    * @warning Принимает владение переданной точкой!
    */
-  void set_vertex(Point* vertex, size_t index);
+  void set_vertex(IPoint* vertex, size_t index);
   /**
    * @brief Возвращает размерность пространства симплекса
    * @return Размерность пространства (0 если симплекс пуст)

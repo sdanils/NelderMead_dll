@@ -32,5 +32,5 @@ class NELDERMID_API SimplexHistory {
    *         - 2 уровень: вершины симплекса на данной итерации
    *         - 3 уровень: координаты конкретной вершины
    */
-  vector<vector<vector<double>>> get_vector_history();
+  vector<Simplex*> get_vector_history();
 };

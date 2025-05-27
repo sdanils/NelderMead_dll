@@ -3,8 +3,9 @@
 #include <cstddef>
 
 #include "ifunction.h"
+#include "ipoint.h"
 
-Simplex* Simplex::create_simplex(const vector<Point*>& coords_list) {
+Simplex* Simplex::create_simplex(const vector<IPoint*>& coords_list) {
   if (coords_list.empty()) {
     throw std::invalid_argument("Simplex must have at least one point");
   }
@@ -23,27 +24,27 @@ Simplex* Simplex::create_simplex(const vector<Point*>& coords_list) {
     }
   }
 
-  vector<Point*> vertices = coords_list;
+  vector<IPoint*> vertices = coords_list;
   return new Simplex(std::move(vertices));
 }
 
 Simplex* Simplex::create_simplex(double step, size_t dimension,
-                                 const Point* x0) {
-  Point* apex;
+                                 const IPoint* x0) {
+  IPoint* apex;
   if (x0 != nullptr) {
     if (dimension != x0->dimensions()) {
       throw std::invalid_argument("Uncorrect dimension apex");
     }
     apex = x0->clone();
   } else {
-    apex = Point::create_point({}, dimension);
+    apex = IPoint::create_point({}, dimension);
   }
 
-  vector<Point*> new_simplex;
+  vector<IPoint*> new_simplex;
   new_simplex.push_back(apex);
 
   for (int i = 0; i < dimension; i++) {
-    Point* cur_apex = apex->clone();
+    IPoint* cur_apex = apex->clone();
     cur_apex->set(cur_apex->get(i) + step, i);
     new_simplex.push_back(cur_apex);
   }
@@ -53,14 +54,14 @@ Simplex* Simplex::create_simplex(double step, size_t dimension,
 
 void Simplex::sort_simplex(const IFunction* expression) {
   sort(vertices.begin(), vertices.end(),
-       [expression](const Point* a, const Point* b) {
+       [expression](const IPoint* a, const IPoint* b) {
          return expression->evaluate(a) < expression->evaluate(b);
        });
 }
 
-Point* Simplex::centroid(int exclude_index) {
+IPoint* Simplex::centroid(int exclude_index) {
   int dimension = vertices[0]->dimensions();
-  Point* center = Point::create_point({}, dimension);
+  IPoint* center = IPoint::create_point({}, dimension);
   int count = 0;
 
   for (int i = 0; i < vertices.size(); ++i) {
@@ -81,7 +82,7 @@ Point* Simplex::centroid(int exclude_index) {
   return center;
 }
 
-Point* Simplex::get_vertex(size_t index) const {
+IPoint* Simplex::get_vertex(size_t index) const {
   if (index >= vertices.size() || index < 0) {
     throw std::out_of_range("Vertex index out of range");
   }
@@ -94,7 +95,7 @@ size_t Simplex::dimension() const {
 
 size_t Simplex::vertex_count() const { return vertices.size(); }
 
-void Simplex::set_vertex(Point* vertex, size_t index) {
+void Simplex::set_vertex(IPoint* vertex, size_t index) {
   if (index >= vertex_count()) {
     throw std::invalid_argument("Index out of range");
   }
@@ -102,7 +103,7 @@ void Simplex::set_vertex(Point* vertex, size_t index) {
 }
 
 Simplex::~Simplex() {
-  for (Point* point_ : vertices) {
+  for (IPoint* point_ : vertices) {
     delete point_;
   }
 }
