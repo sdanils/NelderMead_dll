@@ -4,6 +4,7 @@
 
 #include "ifunction.h"
 #include "ipoint.h"
+#include "point.h"
 
 Simplex* Simplex::create_simplex(const vector<IPoint*>& coords_list) {
   if (coords_list.empty()) {
@@ -37,7 +38,8 @@ Simplex* Simplex::create_simplex(double step, size_t dimension,
     }
     apex = x0->clone();
   } else {
-    apex = IPoint::create_point({}, dimension);
+    vector<double> vect(dimension, 0.0);
+    apex = new Point(vect);
   }
 
   vector<IPoint*> new_simplex;
@@ -61,7 +63,8 @@ void Simplex::sort_simplex(const IFunction* expression) {
 
 IPoint* Simplex::centroid(int exclude_index) {
   int dimension = vertices[0]->dimensions();
-  IPoint* center = IPoint::create_point({}, dimension);
+  vector<double> vect(dimension, 0.0);
+  IPoint* center = new Point(vect);
   int count = 0;
 
   for (int i = 0; i < vertices.size(); ++i) {

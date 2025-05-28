@@ -14,7 +14,7 @@ using std::vector;
  * @details Хранит координаты точки в виде вектора чисел с плавающей запятой.
  * Предоставляет методы для создания, доступа, модификации и клонирования точек.
  */
-class NELDERMID_API Point : IPoint {
+class NELDERMID_API Point : public IPoint {
  private:
   /**
    * @brief Вектор, хранящий координаты точки

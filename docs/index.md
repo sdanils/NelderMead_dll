@@ -44,20 +44,20 @@
   ExpressionTree* tree = ExpressionTree::create_tree("x1^2+x2^2");
   std::cout << tree->json_tree();
   std::vector<double> p = {1, 4};
-  IPoint* point = IPoint::create_point(p, (size_t)2);
+  IPoint* point = new Point(p);
   std::cout << "\nRes: " << tree->evaluate(point) << "\n";
 
   std::vector<IPoint*> simplex;
   for (int i = 0; i < 3; i++) {
     std::vector<double> g = {1.0 + i, 2.0 - i * i};
-    IPoint* new_point = IPoint::create_point(g, 2);
+    IPoint* new_point = new Point(g);
     simplex.push_back(new_point);
   }
 
   Simplex* sim = Simplex::create_simplex(simplex);
 
   NelderMeadMethod nel = NelderMeadMethod(tree, 1.0, 2.0, 0.5, 0.5, 1.0E-10);
-  //nel.set_simplex(sim);
+  nel.set_simplex(sim);
 
   SimplexHistory* histor = nel.minimum_search();
   vector<Simplex*> his = histor->get_vector_history();
