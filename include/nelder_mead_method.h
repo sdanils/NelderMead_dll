@@ -3,7 +3,9 @@
 #include <vector>
 
 #include "dll_api.h"
-#include "expression_tree.h"
+#include "ifunction.h"
+#include "simplex.h"
+#include "simplex_history.h"
 
 using std::vector;
 
@@ -15,27 +17,14 @@ using std::vector;
  */
 class NELDERMID_API NelderMeadMethod {
  private:
-  ExpressionTree* expression_tree;  ///< Объект выражения
-  double reflection;                ///< Коэффициент отражения
-  double expansion;                 ///< Коэффициент растяжения
-  double contraction;               ///< Коэффициент сжатия
-  double homothety;   ///< Коэффициент гомотетии (глобальное сжатие)
-  double dispersion;  ///< Значение дисперсии, для условия остановки
+  IFunction* function;  ///< Объект выражения
+  double reflection;    ///< Коэффициент отражения
+  double expansion;     ///< Коэффициент растяжения
+  double contraction;   ///< Коэффициент сжатия
+  double homothety;     ///< Коэффициент гомотетии (глобальное сжатие)
+  double dispersion;    ///< Значение дисперсии, для условия остановки
 
-  vector<vector<double>> simplex;  ///< Текущий симплекс
-
-  /**
-   * @brief Метод для сортировки вершин симплекса по увеличению значения функции
-   */
-  void sort_simplex();
-
-  /**
-   * @brief Вычисляет координаты точки центра тяжести симплекса, без учета
-   * передаваемой вершины
-   * @param exclude_index Индекс вершины симплекса, которую нужно игнорировать
-   * @return vector<double> координаты центра тяжести
-   */
-  vector<double> centroid(int exclude_index = -1);
+  Simplex* simplex;  ///< Текущий симплекс
 
   /**
    * @brief Выполняет проверку условия остановки алгоритма
@@ -65,20 +54,9 @@ class NELDERMID_API NelderMeadMethod {
    * @param homothety_ Коэффициент гомотетии (глобальное сжатие)
    * @param dispersion_ ///< Значение дисперсии, для условия остановки
    */
-  NelderMeadMethod(ExpressionTree* expression_tree_, double reflection_ = 1,
-                   double expansion_ = 2, double contraction_ = 0.5,
+  NelderMeadMethod(IFunction* function_, double reflection_ = 1.0,
+                   double expansion_ = 2.0, double contraction_ = 0.5,
                    double homothety_ = 0.5, double dispersion_ = 0.0001);
-
-  /**
-   * @brief Генерирует симплекс в окрестности точки x0
-   * @details генерирует симплекс с вершиной в x0. В случае пустого вектора,
-   * генерируется симплек в нулевой точки
-   * @param step Покоординатное растояние между вершинами симплекса
-   * @param x0 Вектор - вершина или пустой вектор
-   * @warning Выбрасывает исключение std::invalid_argument с сообщение об
-   * ошибки, если вектор принадлежит некорректному пространству
-   */
-  void generate_simplex(double step, const vector<double>& x0 = {});
 
   /**
    * @brief Задает симплекс алгоритма
@@ -87,7 +65,8 @@ class NELDERMID_API NelderMeadMethod {
    * @warning Выбрасывает исключение std::invalid_argument с сообщение об
    * ошибки, если симплекс имеет некорректную размерность
    */
-  void set_simplex(const vector<vector<double>>& simplex_);
+  void set_simplex(const Simplex* simplex_);
+
   /**
    * @brief Выполняет поиск симплекса, в котором находится локальный минимум.
    * @details Выполняет поиск, сохраняя промежуточные симплексы. В случае
@@ -95,5 +74,7 @@ class NELDERMID_API NelderMeadMethod {
    * @param number_steps Максимальное число шагов алгоритма
    * @return Вектор промежуточных симплексов
    */
-  vector<vector<vector<double>>> minimum_search(int number_steps = 10000);
+  SimplexHistory* minimum_search(int number_steps = 10000);
+
+  ~NelderMeadMethod();
 };
